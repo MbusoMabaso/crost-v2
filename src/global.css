@@ -81,7 +81,7 @@ p {
   padding: 0.5rem 1rem;
   border-radius: 50px;
   background: transparent;
-  color: white;
+  color: white !important;
   text-decoration: none;
   transition: all 0.3s ease;
   
@@ -92,6 +92,6 @@ p {
 .nav-link-animated:hover {
   border-color: var(--crost-primary);
   background: #f0f0f0; /* Light grey */
-  color: #2e2e2e; /* Matte black */
+  color: #2e2e2e !important; /* Matte black */
   box-shadow: 0 0 15px rgba(18, 86, 216, 0.3);
 }
