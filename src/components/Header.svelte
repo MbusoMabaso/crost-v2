@@ -36,11 +36,11 @@
       </div>
     </div>
     <nav class="nav-desktop">
-      <a href="#/" class="shine-effect">Home</a>
-      <a href="#/about" class="shine-effect">About</a>
-      <a href="#/mission" class="shine-effect">Mission</a>
-      <a href="#/services" class="shine-effect">Capabilities</a>
-      <a href="#/contact" class="shine-effect">Contact</a>
+      <a href="#/" class="nav-link-animated">Home</a>
+      <a href="#/about" class="nav-link-animated">About</a>
+      <a href="#/mission" class="nav-link-animated">Mission</a>
+      <a href="#/services" class="nav-link-animated">Capabilities</a>
+      <a href="#/contact" class="nav-link-animated">Contact</a>
     </nav>
     <button class="menu-toggle" on:click={toggleMenu} aria-label="Toggle menu">
       <div class="hamburger" class:active={menuOpen}>
@@ -50,11 +50,11 @@
   </div>
   {#if menuOpen}
     <nav class="nav-mobile-menu">
-      <a href="#/" class="shine-effect" on:click={closeMenu}>Home</a>
-      <a href="#/about" class="shine-effect" on:click={closeMenu}>About</a>
-      <a href="#/mission" class="shine-effect" on:click={closeMenu}>Mission</a>
-      <a href="#/services" class="shine-effect" on:click={closeMenu}>Capabilities</a>
-      <a href="#/contact" class="shine-effect" on:click={closeMenu}>Contact</a>
+      <a href="#/" on:click={closeMenu}>Home</a>
+      <a href="#/about" on:click={closeMenu}>About</a>
+      <a href="#/mission" on:click={closeMenu}>Mission</a>
+      <a href="#/services" on:click={closeMenu}>Capabilities</a>
+      <a href="#/contact" on:click={closeMenu}>Contact</a>
     </nav>
   {/if}
 </header>
@@ -104,14 +104,6 @@
     flex-shrink: 1;
     min-width: 0;
   }
-  .nav-desktop a {
-    color: #fff;
-    font-weight: 600;
-    margin-left: 1.2rem;
-    white-space: nowrap;
-    font-size: 0.9rem;
-  }
-  .nav-desktop a:hover { color: var(--crost-primary); }
 
   .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; margin-right: 0.5rem; }
   .hamburger span { width: 25px; height: 3px; background: #fff; display: block; margin: 5px 0; }
