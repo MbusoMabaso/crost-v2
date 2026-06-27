@@ -1,0 +1,24 @@
+{
+  "name": "crost-media",
+  "version": "1.0.0",
+  "description": "Crost Media - Integrated Strategic Creative Agency",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "prettier --plugin-search-dir . --check .",
+    "format": "prettier --plugin-search-dir . --write ."
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "ngrok": "^5.0.0-beta.2",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "svelte": "^5.56.4",
+    "vite": "^8.1.0"
+  },
+  "dependencies": {
+    "svelte-spa-router": "^5.1.1"
+  }
+}
