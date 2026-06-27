@@ -72,21 +72,10 @@ p {
   margin-bottom: 1rem;
 }
 
-@keyframes border-glow {
-  0%, 100% { 
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 5px rgba(18, 86, 216, 0.2);
-  }
-  50% { 
-    border-color: var(--crost-primary);
-    box-shadow: 0 0 15px var(--crost-primary);
-  }
-}
-
 .nav-link-animated {
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 0.5rem 1rem;
-  border-radius: 50px; /* Makes it very rounded */
+  border-radius: 50px;
   background: transparent;
   color: white;
   text-decoration: none;
@@ -94,12 +83,10 @@ p {
   
   display: inline-block;
   margin-left: 1rem;
-  
-  /* Border glow animation */
-  animation: border-glow 3s infinite ease-in-out;
 }
 
 .nav-link-animated:hover {
+  border-color: var(--crost-primary);
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 20px var(--crost-primary);
+  box-shadow: 0 0 15px var(--crost-primary);
 }
