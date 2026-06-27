@@ -5,14 +5,14 @@
   import Router from 'svelte-spa-router'
   import Home from './pages/Home.svelte'
   import About from './pages/About.svelte'
-  import Mission from './pages/Mission.svelte'
+  import Differentiators from './pages/Differentiators.svelte'
   import Services from './pages/Services.svelte'
   import Contact from './pages/Contact.svelte'
 
   const routes = {
     '/': Home,
     '/about': About,
-    '/mission': Mission,
+    '/differentiators': Differentiators,
     '/services': Services,
     '/contact': Contact,
   }

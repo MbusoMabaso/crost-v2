@@ -38,7 +38,7 @@
     <nav class="nav-desktop">
       <a href="#/" class="nav-link-animated">Home</a>
       <a href="#/about" class="nav-link-animated">About</a>
-      <a href="#/mission" class="nav-link-animated">Mission</a>
+      <a href="#/differentiators" class="nav-link-animated">Differentiators</a>
       <a href="#/services" class="nav-link-animated">Capabilities</a>
       <a href="#/contact" class="nav-link-animated">Contact</a>
     </nav>
@@ -52,7 +52,7 @@
     <nav class="nav-mobile-menu">
       <a href="#/" on:click={closeMenu}>Home</a>
       <a href="#/about" on:click={closeMenu}>About</a>
-      <a href="#/mission" on:click={closeMenu}>Mission</a>
+      <a href="#/differentiators" on:click={closeMenu}>Differentiators</a>
       <a href="#/services" on:click={closeMenu}>Capabilities</a>
       <a href="#/contact" on:click={closeMenu}>Contact</a>
     </nav>
