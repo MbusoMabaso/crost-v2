@@ -1,5 +1,6 @@
 <script>
   import { onMount, onDestroy } from 'svelte'
+  import LightRays from './LightRays.svelte'
   let activeValue = 1
   const values = [
     { id: 1, title: 'Discovery', copy: 'We audit your current position — brand, market, competitors, and commercial context. We ask hard questions and document what we find, without assumption.' },
@@ -27,8 +28,9 @@
   }
 </script>
 
-<section id="about">
-  <div class="container">
+<section id="about" class="relative">
+  <LightRays />
+  <div class="container relative z-10">
 
     <div class="values-tabs above">
       <div class="tabs">

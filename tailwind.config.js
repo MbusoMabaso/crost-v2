@@ -16,6 +16,9 @@ export default {
           },
         },
       },
+      animation: {
+        "spin-slow": "spin 20s linear infinite",
+      },
       backgroundSize: {
         "shine-size": "300% 300%",
       },
