@@ -36,11 +36,11 @@
       </div>
     </div>
     <nav class="nav-desktop">
-      <a href="#/">Home</a>
-      <a href="#/about">About</a>
-      <a href="#/mission">Mission</a>
-      <a href="#/services">Capabilities</a>
-      <a href="#/contact">Contact</a>
+      <a href="#/" class="shine-effect">Home</a>
+      <a href="#/about" class="shine-effect">About</a>
+      <a href="#/mission" class="shine-effect">Mission</a>
+      <a href="#/services" class="shine-effect">Capabilities</a>
+      <a href="#/contact" class="shine-effect">Contact</a>
     </nav>
     <button class="menu-toggle" on:click={toggleMenu} aria-label="Toggle menu">
       <div class="hamburger" class:active={menuOpen}>
@@ -50,11 +50,11 @@
   </div>
   {#if menuOpen}
     <nav class="nav-mobile-menu">
-      <a href="#/" on:click={closeMenu}>Home</a>
-      <a href="#/about" on:click={closeMenu}>About</a>
-      <a href="#/mission" on:click={closeMenu}>Mission</a>
-      <a href="#/services" on:click={closeMenu}>Capabilities</a>
-      <a href="#/contact" on:click={closeMenu}>Contact</a>
+      <a href="#/" class="shine-effect" on:click={closeMenu}>Home</a>
+      <a href="#/about" class="shine-effect" on:click={closeMenu}>About</a>
+      <a href="#/mission" class="shine-effect" on:click={closeMenu}>Mission</a>
+      <a href="#/services" class="shine-effect" on:click={closeMenu}>Capabilities</a>
+      <a href="#/contact" class="shine-effect" on:click={closeMenu}>Contact</a>
     </nav>
   {/if}
 </header>
