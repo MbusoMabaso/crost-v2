@@ -16,8 +16,10 @@
     '/services': Services,
     '/contact': Contact,
   }
+  
+  console.log("App initialized with routes:", routes);
 </script>
 
 <Header />
-<Router {routes} />
+<Router {routes} on:routeLoaded={(event) => console.log('Route loaded:', event.detail.location)} />
 <Footer />
