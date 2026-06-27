@@ -16,6 +16,9 @@ export default {
           },
         },
       },
+      backgroundSize: {
+        "shine-size": "300% 300%",
+      },
     },
   },
   plugins: [],

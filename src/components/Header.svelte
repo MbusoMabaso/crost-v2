@@ -28,9 +28,9 @@
 <header class:hidden={headerHidden}>
   <div class="container">
     <div class="logo">
-      <div class="logo-main">
+      <a href="#/" class="logo-main">
         <img src="/Logo.svg" alt="Crost Media Logo" />
-      </div>
+      </a>
       <div class="logo-tagline">
         <span>Integrated Strategic Creative Agency</span>
       </div>
@@ -74,6 +74,7 @@
   .logo-main {
     display: flex;
     align-items: center;
+    text-decoration: none;
   }
 
   .logo-main img {
