@@ -72,36 +72,34 @@ p {
   margin-bottom: 1rem;
 }
 
-@keyframes text-shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
 @keyframes border-glow {
-  0%, 100% { border-color: rgba(255, 255, 255, 0.3); }
-  50% { border-color: var(--crost-primary); }
+  0%, 100% { 
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 5px rgba(18, 86, 216, 0.2);
+  }
+  50% { 
+    border-color: var(--crost-primary);
+    box-shadow: 0 0 15px var(--crost-primary);
+  }
 }
 
 .nav-link-animated {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 50px; /* Makes it very rounded */
   background: transparent;
+  color: white;
+  text-decoration: none;
   transition: all 0.3s ease;
-  
-  /* Text shimmer - slowed down */
-  background: linear-gradient(90deg, #fff 25%, #888 50%, #fff 75%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: text-shimmer 8s infinite linear, border-glow 4s infinite ease-in-out;
   
   display: inline-block;
   margin-left: 1rem;
+  
+  /* Border glow animation */
+  animation: border-glow 3s infinite ease-in-out;
 }
 
 .nav-link-animated:hover {
-  border-color: var(--crost-primary);
-  box-shadow: 0 0 12px var(--crost-primary);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px var(--crost-primary);
 }
