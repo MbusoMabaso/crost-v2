@@ -71,3 +71,17 @@ h3 {
 p {
   margin-bottom: 1rem;
 }
+@keyframes shine-pulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  to {
+    background-position: 0% 0%;
+  }
+}
+.animate-shine-pulse {
+  animation: shine-pulse var(--shine-pulse-duration, 14s) infinite linear;
+}
