@@ -1,10 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --crost-primary: #1256d8;
   --crost-dark: #0a1f3d;
   --crost-soft: #e8f0ff;
   --crost-muted: #666666;
 }
-
+...
 :root {
   --crost-primary: #1256d8;
   --crost-dark: #0a1f3d;
