@@ -73,7 +73,7 @@ p {
 }
 
 .nav-link-animated {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid transparent;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   background: transparent;
@@ -87,6 +87,7 @@ p {
 
 .nav-link-animated:hover {
   border-color: var(--crost-primary);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 15px var(--crost-primary);
+  background: #f0f0f0; /* Light grey */
+  color: #2e2e2e; /* Matte black */
+  box-shadow: 0 0 15px rgba(18, 86, 216, 0.3);
 }
