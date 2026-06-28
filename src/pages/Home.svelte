@@ -10,7 +10,7 @@
   <AboutTabs />
 </section>
 
-<section class="container">
+<section class="container values-section">
   <ValuesInfo />
 </section>
 
@@ -21,5 +21,9 @@
     padding: 0 1rem;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .values-section {
+    padding: 4rem 0;
   }
 </style>
