@@ -1,5 +1,5 @@
 <script>
-  import LightRays from './LightRays.svelte'
+  import LightRays from './lib/LightRays.svelte'
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -10,7 +10,9 @@
 </script>
 
 <section id="contact-hero">
-  <LightRays />
+  <div class="rays-bg">
+    <LightRays raysOrigin="top-center" raysColor="#ffffff" raysSpeed={1} />
+  </div>
   <div class="container">
     <div class="hero-content">
       <h1>Let's Start Your Journey</h1>
@@ -46,6 +48,16 @@
     box-sizing: border-box;
     padding-top: 5.5rem;
     padding-bottom: 2rem;
+  }
+
+  .rays-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   #contact-hero .container {
