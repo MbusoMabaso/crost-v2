@@ -147,33 +147,6 @@
     margin: 0;
   }
 
-  .values-info {
-    background: linear-gradient(135deg, var(--crost-dark) 0%, var(--crost-dark) 100%);
-    color: white;
-    padding: 3rem;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(22, 33, 62, 0.2);
-  }
-
-  .values-info h3 {
-    color: var(--crost-primary);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-  }
-
-  .values-info p {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1rem;
-  }
-
-  .values-info p:last-child {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
-    margin-bottom: 0;
-  }
-
   .values-heading {
     text-align: center;
     color: var(--crost-dark);
@@ -287,14 +260,6 @@
       font-size: 0.9rem;
     }
 
-    .values-info {
-      padding: 2rem;
-    }
-
-    .values-info h3 {
-      font-size: 1.3rem;
-    }
-
     .values-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
@@ -363,20 +328,6 @@
     .diff-card p {
       font-size: 0.85rem;
       line-height: 1.5;
-    }
-
-    .values-info {
-      padding: 1.5rem;
-    }
-
-    .values-info h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .values-info p {
-      font-size: 0.9rem;
-      margin-bottom: 0.75rem;
     }
 
     .values-grid {

@@ -1,5 +1,6 @@
 <script>
   import LightRays from './LightRays.svelte'
+  import SoftAurora from './SoftAurora.svelte'
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -10,6 +11,9 @@
 </script>
 
 <section id="services-hero">
+  <div class="aurora-bg">
+    <SoftAurora />
+  </div>
   <LightRays />
   <div class="container">
     <div class="hero-content">
@@ -33,6 +37,16 @@
     padding: 0 1rem;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .aurora-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   #services-hero {

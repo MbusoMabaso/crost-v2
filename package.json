@@ -25,6 +25,8 @@
     "vite": "^8.1.0"
   },
   "dependencies": {
-    "svelte-spa-router": "^5.1.1"
+    "ogl": "^1.0.11",
+    "svelte-spa-router": "^5.1.1",
+    "three": "^0.185.0"
   }
 }

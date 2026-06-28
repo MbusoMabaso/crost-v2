@@ -1,5 +1,5 @@
 <script>
-  import LightRays from './LightRays.svelte'
+  import Iridescence from './Iridescence.svelte'
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -10,7 +10,14 @@
 </script>
 
 <section id="about-hero">
-  <LightRays />
+  <div class="iridescence-bg">
+    <Iridescence
+      color={[0.7, 0.8, 1]}
+      mouseReact={true}
+      amplitude={0.05}
+      speed={0.5}
+    />
+  </div>
   <div class="container">
     <div class="hero-content">
       <h1>Strategy and creativity, held to the same standard.</h1>
@@ -36,7 +43,6 @@
   }
 
   #about-hero {
-    background: linear-gradient(135deg, var(--crost-soft) 0%, #ffffff 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -46,6 +52,16 @@
     box-sizing: border-box;
     padding-top: 5.5rem;
     padding-bottom: 2rem;
+  }
+
+  .iridescence-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   #about-hero .container {

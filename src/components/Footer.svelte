@@ -2,7 +2,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-section footer-logo">
-        <img src="/LogoName.svg" alt="Crost Media Logo" />
+        <img src="/LogoFullName.svg" alt="Crost Media Logo" />
       </div>
       <div class="footer-section">
         <h4>Services</h4>
@@ -62,7 +62,7 @@
   }
 
   .footer-section.footer-logo img {
-    max-width: 120px;
+    max-width: 200px;
     margin-bottom: 1rem;
     display: block;
   }

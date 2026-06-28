@@ -60,7 +60,7 @@
 </header>
 
 <style>
-  header { background: rgba(10, 31, 61, 0.85); padding: 1rem 0; position: fixed; top: 0; width: 100%; transition: transform 0.3s ease; z-index: 1000; }
+  header { background: rgba(10, 31, 61, 0.85); /* Keep original */ padding: 1rem 0; position: fixed; top: 0; width: 100%; transition: transform 0.3s ease; z-index: 1000; }
   header.hidden { transform: translateY(-100%); }
   .container { max-width: 95%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 

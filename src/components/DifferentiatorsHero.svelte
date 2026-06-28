@@ -1,5 +1,6 @@
 <script>
   import LightRays from './LightRays.svelte'
+  import GridDistortion from './lib/GridDistortion.svelte'
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -10,11 +11,22 @@
 </script>
 
 <section id="differentiators-hero">
-  <LightRays />
+  <div class="aurora-bg">
+    <GridDistortion 
+      imageSrc="/CapabilitiesBackground.jpg" 
+      grid={15} 
+      mouse={0.1} 
+      strength={0.15} 
+      relaxation={0.9} 
+    />
+  </div>
+  <div style="z-index: -1;">
+    <LightRays />
+  </div>
   <div class="container">
     <div class="hero-content">
-      <h1>What Sets Us Apart?</h1>
-      <p>We ask what a brand needs to achieve before we consider how it should look. The work's visual quality is a consequence of the clarity of thinking, not a substitute for it.</p>
+      <h1 style="color: black;">What Sets Us Apart?</h1>
+      <p style="color: black; font-weight: 500;">We ask what a brand needs to achieve before we consider how it should look. The work's visual quality is a consequence of the clarity of thinking, not a substitute for it.</p>
       <div class="cta-buttons">
         <button class="btn btn-primary" on:click={() => scrollToSection('differentiators')}>Our Differentiators</button>
         <button class="btn btn-secondary" on:click={() => scrollToSection('mission')}>Our Mission & Vision</button>
@@ -43,9 +55,31 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    z-index: 10;
     box-sizing: border-box;
-    padding-top: 5.5rem;
+    padding-top: 8rem;
     padding-bottom: 2rem;
+  }
+
+  .aurora-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .aurora-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 1;
   }
 
   #differentiators-hero .container {
