@@ -24,8 +24,8 @@
     <h2>Get In Touch</h2>
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>Let's Start Your Journey</h3>
-        <p>Whether you're a celebrity, executive, or business looking to build influence and protect your reputation, we're here to help.</p>
+        <h3>Contact Information</h3>
+        <p>Get in touch directly via email, follow our social channels, or use the form to send us a direct message.</p>
         
         <div class="info-item">
           <h4>Email</h4>

@@ -32,32 +32,6 @@
   <LightRays />
   <div class="container relative z-10">
 
-    <div class="values-tabs above">
-      <div class="tabs">
-        {#each values as v}
-          <button class="tab {activeValue === v.id ? 'active' : ''}" on:click={() => selectValue(v.id)} aria-pressed={activeValue === v.id}>
-            <span class="tab-title">{v.title}</span>
-          </button>
-        {/each}
-      </div>
-
-      <div class="value-content">
-        {#each values as v}
-          {#if activeValue === v.id}
-            <div class="value-panel">
-              <h4>{v.title}</h4>
-              <p>{v.copy}</p>
-            </div>
-          {/if}
-        {/each}
-      </div>
-    </div>
-
-    <div class="who-we-are-intro">
-      <p class="intro-main">Crost Media strategically combines brand strategy, creative production, and digital execution into a single, coherent service, so our clients never have to manage three separate agencies to achieve one result.</p>
-      <p class="intro-tagline">Strategy and creativity,<br />held to the same<br />standard.</p>
-    </div>
-
     <h2>W H O &nbsp; W E &nbsp; A R E</h2>
 
     <div class="who-we-are-content">
@@ -85,32 +59,6 @@
     background-color: #ffffff;
     width: 100%;
     overflow-x: hidden;
-  }
-
-  .who-we-are-intro {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    margin-bottom: 4rem;
-    padding: 2rem;
-    background: linear-gradient(135deg, var(--crost-soft) 0%, #ffffff 100%);
-    border-radius: 12px;
-  }
-
-  .intro-main {
-    font-size: 1.1rem;
-    color: var(--crost-dark);
-    line-height: 1.8;
-    margin: 0;
-  }
-
-  .intro-tagline {
-    font-size: 1.25rem;
-    color: var(--crost-primary);
-    font-weight: 600;
-    line-height: 1.6;
-    margin: 0;
   }
 
   h2 {
@@ -147,12 +95,6 @@
       margin-bottom: 2.5rem;
     }
 
-    .who-we-are-intro {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
     .who-we-are-content {
       padding: 2rem;
       font-size: 1rem;
@@ -171,19 +113,6 @@
     h2 {
       font-size: 1.6rem;
       margin-bottom: 2rem;
-    }
-
-    .who-we-are-intro {
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .intro-main {
-      font-size: 1rem;
-    }
-
-    .intro-tagline {
-      font-size: 1.1rem;
     }
 
     .who-we-are-content {
@@ -210,20 +139,6 @@
       margin-bottom: 1.5rem;
     }
 
-    .who-we-are-intro {
-      padding: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .intro-main {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .intro-tagline {
-      font-size: 1rem;
-    }
-
     .who-we-are-content {
       padding: 1rem;
       font-size: 0.9rem;
@@ -234,67 +149,5 @@
       line-height: 1.5;
       margin-bottom: 1rem;
     }
-  }
-
-  /* Values tabs */
-  .values-tabs {
-    margin-top: 2.5rem;
-  }
-
-  .tabs {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 1.25rem;
-  }
-
-  .tab {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.65rem 1rem;
-    border-radius: 999px;
-    background: transparent;
-    border: 1px solid var(--crost-border);
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--crost-dark);
-    transition: all 0.18s ease;
-  }
-
-  .tab.active {
-    background: var(--crost-primary);
-    color: white;
-    border-color: var(--crost-primary);
-    box-shadow: 0 8px 20px rgba(18,86,216,0.12);
-  }
-
-  .tab-title {
-    display: inline-block;
-    white-space: nowrap;
-  }
-
-  .value-content {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .value-panel {
-    background: linear-gradient(135deg, #ffffff 0%, var(--crost-surface) 100%);
-    padding: 1.75rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(10,31,61,0.06);
-  }
-
-  .value-panel h4 {
-    margin: 0 0 0.5rem 0;
-    color: var(--crost-dark);
-  }
-
-  .value-panel p {
-    margin: 0;
-    color: var(--crost-muted);
-    line-height: 1.7;
   }
 </style>

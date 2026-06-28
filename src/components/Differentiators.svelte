@@ -37,12 +37,6 @@
       </div>
     </div>
 
-    <div class="values-info">
-      <h3>Our Values</h3>
-      <p>What we hold ourselves to, always.</p>
-      <p class="values-note">These are not aspirations. They are the standards against which we hire, evaluate work, and decide which clients to serve.</p>
-    </div>
-
     <h2 class="values-heading">O U R &nbsp; V A L U E S</h2>
 
     <div class="values-grid">

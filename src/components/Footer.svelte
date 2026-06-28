@@ -3,8 +3,6 @@
     <div class="footer-grid">
       <div class="footer-section footer-logo">
         <img src="/LogoName.svg" alt="Crost Media Logo" />
-        <h4>CROST MEDIA</h4>
-        <p>Building influence. Protecting reputations. Positioning for authority.</p>
       </div>
       <div class="footer-section">
         <h4>Services</h4>
