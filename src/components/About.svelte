@@ -1,6 +1,8 @@
 <script>
   import { onMount, onDestroy } from 'svelte'
   import LightRays from './LightRays.svelte'
+  import Grainient from './lib/Grainient.svelte'
+
   let activeValue = 1
   const values = [
     { id: 1, title: 'Discovery', copy: 'We audit your current position — brand, market, competitors, and commercial context. We ask hard questions and document what we find, without assumption.' },
@@ -34,11 +36,21 @@
 
     <h2>W H O &nbsp; W E &nbsp; A R E</h2>
 
-    <div class="who-we-are-content">
-      <p>We work with organisations that require more than visual output. Our engagements begin with commercial clarity: who you are, what you need to achieve, and what stands between you and that goal. Creative work follows. Not the other way around.</p>
-      <p>Our team brings together strategy, design, culture, storytelling, and technology, disciplines that operate independently in most agencies, and in unison at Crost.</p>
+    <div class="who-we-are-content relative overflow-hidden">
+      <div class="grainient-container">
+        <Grainient 
+          color1="#0a0a0a" 
+          color2="#0a1a3a" 
+          color3="#1a0a1a" 
+          class="absolute inset-0 w-full h-full"
+        />
+      </div>
+      <div class="content relative z-10">
+        <p>We work with organisations that require more than visual output. Our engagements begin with commercial clarity: who you are, what you need to achieve, and what stands between you and that goal. Creative work follows. Not the other way around.</p>
+        <p>Our team brings together strategy, design, culture, storytelling, and technology, disciplines that operate independently in most agencies, and in unison at Crost.</p>
+      </div>
     </div>
-    
+
   </div>
 </section>
 
@@ -70,7 +82,7 @@
   }
 
   .who-we-are-content {
-    background: linear-gradient(135deg, var(--crost-dark) 0%, var(--crost-dark) 100%);
+    background: var(--crost-dark);
     color: white;
     padding: 3rem;
     border-radius: 12px;
@@ -78,6 +90,21 @@
     font-size: 1.05rem;
     line-height: 1.8;
     box-shadow: 0 8px 20px rgba(22, 33, 62, 0.2);
+  }
+
+  .grainient-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
   }
 
   .who-we-are-content p {
@@ -90,64 +117,20 @@
   }
 
   @media (max-width: 1024px) {
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 2.5rem;
-    }
-
     .who-we-are-content {
       padding: 2rem;
-      font-size: 1rem;
     }
   }
 
   @media (max-width: 768px) {
-    section {
-      padding: 3rem 0;
-    }
-
-    .container {
-      padding: 0 1.5rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
-    }
-
     .who-we-are-content {
       padding: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    .who-we-are-content p {
-      line-height: 1.6;
     }
   }
 
   @media (max-width: 480px) {
-    section {
-      padding: 2rem 0;
-    }
-
-    .container {
-      padding: 0 1rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-    }
-
     .who-we-are-content {
       padding: 1rem;
-      font-size: 0.9rem;
-      border-radius: 8px;
-    }
-
-    .who-we-are-content p {
-      line-height: 1.5;
-      margin-bottom: 1rem;
     }
   }
 </style>
