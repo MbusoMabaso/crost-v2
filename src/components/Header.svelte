@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte'
+  import Grainient from './lib/Grainient.svelte'
 
   let menuOpen = false
   let lastScrollY = 0
@@ -26,7 +27,15 @@
 </script>
 
 <header class:hidden={headerHidden}>
-  <div class="container">
+  <div class="grainient-container">
+    <Grainient 
+      color1="#0a0a0a" 
+      color2="#0a1a3a" 
+      color3="#1a0a1a" 
+      class="absolute inset-0 w-full h-full"
+    />
+  </div>
+  <div class="container relative z-10">
     <div class="logo">
       <a href="#/" class="logo-main">
         <img src="/Logo.svg" alt="Crost Media Logo" />
@@ -60,8 +69,28 @@
 </header>
 
 <style>
-  header { background: rgba(10, 31, 61, 0.85); /* Keep original */ padding: 1rem 0; position: fixed; top: 0; width: 100%; transition: transform 0.3s ease; z-index: 1000; }
+  header { 
+    background: rgba(10, 31, 61, 0.85); 
+    padding: 1rem 0; 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    transition: transform 0.3s ease; 
+    z-index: 1000; 
+    overflow: hidden;
+  }
   header.hidden { transform: translateY(-100%); }
+  
+  .grainient-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
   .container { max-width: 95%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 
   .logo {

@@ -48,7 +48,6 @@
   }
 
   #differentiators-hero {
-    background: linear-gradient(135deg, var(--crost-soft) 0%, #ffffff 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;

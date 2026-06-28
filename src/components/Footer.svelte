@@ -1,5 +1,17 @@
-<footer>
-  <div class="container">
+<script>
+  import Grainient from './lib/Grainient.svelte';
+</script>
+
+<footer class="relative overflow-hidden">
+  <div class="grainient-container">
+    <Grainient 
+      color1="#0a0a0a" 
+      color2="#0a1a3a" 
+      color3="#1a0a1a" 
+      class="absolute inset-0 w-full h-full"
+    />
+  </div>
+  <div class="container relative z-10">
     <div class="footer-grid">
       <div class="footer-section footer-logo">
         <img src="/LogoFullName.svg" alt="Crost Media Logo" />
@@ -40,11 +52,21 @@
 
 <style>
   footer {
-    background: linear-gradient(135deg, var(--crost-dark) 0%, var(--crost-dark) 100%);
+    background: var(--crost-dark);
     color: white;
     padding: 2rem 0 0.5rem;
     width: 100%;
     overflow-x: hidden;
+  }
+
+  .grainient-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .container {
