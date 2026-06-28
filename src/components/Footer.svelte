@@ -42,7 +42,7 @@
   footer {
     background: linear-gradient(135deg, var(--crost-dark) 0%, var(--crost-dark) 100%);
     color: white;
-    padding: 3rem 0 1rem;
+    padding: 2rem 0 0.5rem;
     width: 100%;
     overflow-x: hidden;
   }
@@ -57,28 +57,28 @@
   .footer-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .footer-section.footer-logo img {
-    max-width: 200px;
-    margin-bottom: 1rem;
+    max-width: 180px;
+    margin-bottom: 0.75rem;
     display: block;
   }
 
   .footer-section h4 {
     color: var(--crost-primary);
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
     letter-spacing: 1px;
   }
 
   .footer-section p {
     color: var(--crost-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .footer-section ul {
@@ -86,13 +86,13 @@
   }
 
   .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .footer-section a {
     color: var(--crost-muted);
     transition: all 0.3s;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .footer-section a:hover {
@@ -102,10 +102,10 @@
 
   .footer-bottom {
     border-top: 1px solid rgba(18, 86, 216, 0.2);
-    padding-top: 2rem;
+    padding-top: 1rem;
     text-align: center;
     color: #8c9bc2;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   @media (max-width: 1024px) {
@@ -117,7 +117,7 @@
 
   @media (max-width: 768px) {
     footer {
-      padding: 2rem 0 1rem;
+      padding: 1.5rem 0 0.5rem;
     }
 
     .container {
@@ -126,56 +126,17 @@
 
     .footer-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-section h4 {
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-section p {
-      font-size: 0.85rem;
-    }
-
-    .footer-section a {
-      font-size: 0.85rem;
-    }
-
-    .footer-bottom {
-      padding-top: 1.5rem;
-      font-size: 0.8rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    footer {
-      padding: 1.5rem 0 1rem;
-    }
-
-    .container {
-      padding: 0 1rem;
-    }
-
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 1rem;
       margin-bottom: 1rem;
     }
 
     .footer-section h4 {
       font-size: 0.9rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     .footer-section p {
       font-size: 0.8rem;
-      line-height: 1.5;
-    }
-
-    .footer-section ul li {
-      margin-bottom: 0.4rem;
     }
 
     .footer-section a {
@@ -185,6 +146,45 @@
     .footer-bottom {
       padding-top: 1rem;
       font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    footer {
+      padding: 1rem 0 0.5rem;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section h4 {
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-section p {
+      font-size: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-section a {
+      font-size: 0.75rem;
+    }
+
+    .footer-bottom {
+      padding-top: 0.75rem;
+      font-size: 0.7rem;
     }
   }
 </style>
