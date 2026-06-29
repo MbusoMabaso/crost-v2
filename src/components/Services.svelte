@@ -10,12 +10,12 @@
         <p>We create positioning and narrative frameworks that connect brand identity with commercial ambition.</p>
       </div>
       <div class="service-box">
-        <div class="service-icon">🎨</div>
+        <div class="service-icon"><img src="/Icons/creative.svg" alt="Creative Systems" class="large-enhanced-icon" /></div>
         <h3>Creative Systems</h3>
         <p>Visual identities, campaign systems and content formats designed to behave consistently across every channel.</p>
       </div>
       <div class="service-box">
-        <div class="service-icon">🧠</div>
+        <div class="service-icon"><img src="/Icons/Culture.svg" alt="Culture & Insight" class="large-enhanced-icon" /></div>
         <h3>Culture & Insight</h3>
         <p>Market, audience and cultural intelligence that informs strategy and makes work feel relevant in the right contexts.</p>
       </div>
@@ -91,9 +91,17 @@
   }
 
   .service-icon {
-    font-size: 3.5rem;
+    font-size: 2.625rem;
     margin-bottom: 1rem;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.625rem;
+  }
+
+  .large-enhanced-icon {
+    height: 5.6rem;
+    width: 5.6rem;
   }
 
   .service-box h3 {
