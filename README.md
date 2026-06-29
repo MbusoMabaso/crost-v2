@@ -18,7 +18,7 @@ A modern, responsive website for Crost Media built with Svelte and Vite. The sit
 2. **Hero**: Eye-catching introduction with animated graphics
 3. **About**: Company values and service areas
 4. **Services**: Detailed service offerings (6 service boxes)
-5. **Pricing**: 
+5. **Pricing**:
    - Celebrity & Public Figure PR (3 tiers)
    - Business & Brand PR (customizable packages)
 6. **Contact**: Contact form and social media links
@@ -34,6 +34,7 @@ A modern, responsive website for Crost Media built with Svelte and Vite. The sit
 ## Installation
 
 1. **Clone the repository** (if applicable):
+
    ```bash
    git clone <repository-url>
    cd TupanaConsulting
@@ -121,6 +122,7 @@ npm run preview
 ### Colors & Branding
 
 Update the color scheme in component files:
+
 - Primary color: `#1a5f7a` (teal)
 - Dark color: `#0d3b56` (navy)
 - Light accent: `#85d4f8` (light blue)
@@ -128,12 +130,14 @@ Update the color scheme in component files:
 ### Services & Pricing
 
 Edit the content directly in:
+
 - `src/components/Services.svelte` - Service offerings
 - `src/components/Pricing.svelte` - Pricing tiers and packages
 
 ### Contact Information
 
 Update contact details in:
+
 - `src/components/Contact.svelte` - Email and social links
 - `src/components/Footer.svelte` - Footer links
 
@@ -169,6 +173,7 @@ Update contact details in:
 ## Support & Contact
 
 For website questions or customization needs, contact Crost Media:
+
 - Email: hello@crostmedia.com
 - Instagram: [@crostmedia](https://www.instagram.com/crostmedia)
 

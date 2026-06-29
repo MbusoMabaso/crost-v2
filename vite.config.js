@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { defineConfig } from 'vite';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 export default defineConfig({
   plugins: [svelte()],
@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     host: '0.0.0.0',
     hmr: {
-      clientPort: 5173
-    }
-  }
-})
+      clientPort: 5173,
+    },
+  },
+});
