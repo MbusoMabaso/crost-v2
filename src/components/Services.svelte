@@ -1,39 +1,61 @@
+<script lang="ts">
+  import PixelCard from "../lib/components/PixelCard.svelte";
+  import LightRays from "./LightRays.svelte";
+  import SoftAurora from "./SoftAurora.svelte";
+</script>
+
 <section id="services">
+  <div class="aurora-bg">
+    <SoftAurora />
+  </div>
+  <LightRays />
   <div class="container">
     <h2>What We Do</h2>
     <p class="section-intro">Six strategic disciplines delivered as one coherent agency, so your brand always moves with commercial clarity.</p>
 
     <div class="services-grid">
-      <div class="service-box">
-        <div class="service-icon">📌</div>
-        <h3>Brand Strategy</h3>
-        <p>We create positioning and narrative frameworks that connect brand identity with commercial ambition.</p>
-      </div>
-      <div class="service-box">
-        <div class="service-icon"><img src="/Icons/creative.svg" alt="Creative Systems" class="large-enhanced-icon" /></div>
-        <h3>Creative Systems</h3>
-        <p>Visual identities, campaign systems and content formats designed to behave consistently across every channel.</p>
-      </div>
-      <div class="service-box">
-        <div class="service-icon"><img src="/Icons/Culture.svg" alt="Culture & Insight" class="large-enhanced-icon" /></div>
-        <h3>Culture & Insight</h3>
-        <p>Market, audience and cultural intelligence that informs strategy and makes work feel relevant in the right contexts.</p>
-      </div>
-      <div class="service-box">
-        <div class="service-icon">🌐</div>
-        <h3>Digital Experience</h3>
-        <p>Web, social and digital activation built to move audiences through attention, trust and action.</p>
-      </div>
-      <div class="service-box">
-        <div class="service-icon">📈</div>
-        <h3>Performance & Media</h3>
-        <p>Paid, owned and earned media execution with clear measurement and optimisation aligned to business outcomes.</p>
-      </div>
-      <div class="service-box">
-        <div class="service-icon">📰</div>
-        <h3>Communications</h3>
-        <p>Integrated PR, corporate and reputation work that amplifies strategic positioning and executive presence.</p>
-      </div>
+      <PixelCard>
+        <div class="service-box-content">
+          <div class="service-icon">📌</div>
+          <h3>Brand Strategy</h3>
+          <p>We create positioning and narrative frameworks that connect brand identity with commercial ambition.</p>
+        </div>
+      </PixelCard>
+      <PixelCard>
+        <div class="service-box-content">
+          <div class="service-icon"><img src="/Icons/creative.svg" alt="Creative Systems" class="large-enhanced-icon" /></div>
+          <h3>Creative Systems</h3>
+          <p>Visual identities, campaign systems and content formats designed to behave consistently across every channel.</p>
+        </div>
+      </PixelCard>
+      <PixelCard>
+        <div class="service-box-content">
+          <div class="service-icon"><img src="/Icons/Culture.svg" alt="Culture & Insight" class="large-enhanced-icon" /></div>
+          <h3>Culture & Insight</h3>
+          <p>Market, audience and cultural intelligence that informs strategy and makes work feel relevant in the right contexts.</p>
+        </div>
+      </PixelCard>
+      <PixelCard>
+        <div class="service-box-content">
+          <div class="service-icon">🌐</div>
+          <h3>Digital Experience</h3>
+          <p>Web, social and digital activation built to move audiences through attention, trust and action.</p>
+        </div>
+      </PixelCard>
+      <PixelCard>
+        <div class="service-box-content">
+          <div class="service-icon">📈</div>
+          <h3>Performance & Media</h3>
+          <p>Paid, owned and earned media execution with clear measurement and optimisation aligned to business outcomes.</p>
+        </div>
+      </PixelCard>
+      <PixelCard>
+        <div class="service-box-content">
+          <div class="service-icon">📰</div>
+          <h3>Communications</h3>
+          <p>Integrated PR, corporate and reputation work that amplifies strategic positioning and executive presence.</p>
+        </div>
+      </PixelCard>
     </div>
 
     <div class="service-notes">
@@ -45,6 +67,18 @@
 <style>
   section {
     padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .aurora-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .container {
@@ -53,12 +87,15 @@
     padding: 0 1rem;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    z-index: 1;
   }
 
   #services {
     background: linear-gradient(135deg, var(--crost-soft) 0%, #ffffff 100%);
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
+    position: relative;
   }
 
   h2 {
@@ -74,20 +111,18 @@
     gap: 2rem;
   }
 
-  .service-box {
-    background: white;
+  .service-box-content {
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    border-top: 3px solid transparent;
-  }
-
-  .service-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 14px 35px rgba(18, 86, 216, 0.2);
-    border-top-color: var(--crost-primary);
+    z-index: 10; /* Ensure content is above canvas */
+    position: relative;
+    color: var(--crost-dark);
   }
 
   .service-icon {
@@ -104,13 +139,13 @@
     width: 5.6rem;
   }
 
-  .service-box h3 {
+  .service-box-content h3 {
     color: var(--crost-dark);
     margin-bottom: 1rem;
     font-size: 1.2rem;
   }
 
-  .service-box p {
+  .service-box-content p {
     color: var(--crost-muted);
     line-height: 1.6;
     font-size: 0.95rem;
@@ -127,12 +162,13 @@
       gap: 1.5rem;
     }
 
-    .service-box {
+    .service-box-content {
       padding: 1.5rem;
     }
 
     .service-icon {
-      font-size: 3rem;
+      font-size: 2.25rem;
+      height: 2.25rem;
     }
   }
 
@@ -155,19 +191,20 @@
       gap: 1rem;
     }
 
-    .service-box {
+    .service-box-content {
       padding: 1.5rem;
     }
 
     .service-icon {
-      font-size: 2.5rem;
+      font-size: 2rem;
+      height: 2rem;
     }
 
-    .service-box h3 {
+    .service-box-content h3 {
       font-size: 1.1rem;
     }
 
-    .service-box p {
+    .service-box-content p {
       font-size: 0.9rem;
     }
   }
@@ -186,21 +223,22 @@
       margin-bottom: 1.5rem;
     }
 
-    .service-box {
+    .service-box-content {
       padding: 1.25rem;
     }
 
     .service-icon {
-      font-size: 2rem;
+      font-size: 1.75rem;
+      height: 1.75rem;
       margin-bottom: 0.75rem;
     }
 
-    .service-box h3 {
+    .service-box-content h3 {
       font-size: 1rem;
       margin-bottom: 0.75rem;
     }
 
-    .service-box p {
+    .service-box-content p {
       font-size: 0.85rem;
       line-height: 1.5;
     }
