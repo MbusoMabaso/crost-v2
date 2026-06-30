@@ -11,7 +11,6 @@
   <LightRays />
   <div class="container">
     <h2>What We Do</h2>
-    <p class="section-intro">Six strategic disciplines delivered as one coherent agency, so your brand always moves with commercial clarity.</p>
 
     <div class="services-grid">
       <PixelCard>
@@ -59,7 +58,6 @@
     </div>
 
     <div class="service-notes">
-      <p>Crost Media is built to hold strategy, creative and delivery together so each output is directly connected to commercial momentum.</p>
     </div>
   </div>
 </section>
