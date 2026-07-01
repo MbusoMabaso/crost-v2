@@ -1,8 +1,10 @@
 <script>
   import { onMount, onDestroy } from 'svelte'
+  import { fade } from 'svelte/transition'
   import LightRays from './LightRays.svelte'
   import SoftAurora from './SoftAurora.svelte'
 
+  let visible = false
   const content = [
     {
       title: 'Advertising',
@@ -51,7 +53,10 @@
     }, 4000)
   }
 
-  onMount(() => startCarousel())
+  onMount(() => {
+    visible = true
+    startCarousel()
+  })
   onDestroy(() => clearInterval(interval))
 
   function scrollToSection(id) {
@@ -61,26 +66,28 @@
     }
   }
 </script>
-<section id="services-hero">
-  <div class="aurora-bg">
-    <SoftAurora />
-  </div>
-  <LightRays />
-  <div class="container text-only-container">
-    <div class="hero-content">
-      {#key currentIndex}
-        <div class="content-wrapper">
-          <h1 class="content-title">{content[currentIndex].title}</h1>
-          <p class="content-desc">{content[currentIndex].desc}</p>
+{#if visible}
+  <section id="services-hero" transition:fade={{ duration: 1000 }}>
+    <div class="aurora-bg">
+      <SoftAurora />
+    </div>
+    <LightRays />
+    <div class="container text-only-container">
+      <div class="hero-content">
+        {#key currentIndex}
+          <div class="content-wrapper">
+            <h1 class="content-title">{content[currentIndex].title}</h1>
+            <p class="content-desc">{content[currentIndex].desc}</p>
+          </div>
+        {/key}
+        <div class="cta-buttons">
+          <button class="btn btn-primary" on:click={() => scrollToSection('services')}>Our Services</button>
+          <button class="btn btn-secondary" on:click={() => scrollToSection('pricing')}>Pricing Plans</button>
         </div>
-      {/key}
-      <div class="cta-buttons">
-        <button class="btn btn-primary" on:click={() => scrollToSection('services')}>Our Services</button>
-        <button class="btn btn-secondary" on:click={() => scrollToSection('pricing')}>Pricing Plans</button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+{/if}
 
 <style>
   .container {
