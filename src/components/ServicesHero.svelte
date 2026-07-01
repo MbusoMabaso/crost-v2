@@ -1,6 +1,5 @@
 <script>
   import { onMount, onDestroy } from 'svelte'
-  import { fade } from 'svelte/transition'
   import LightRays from './LightRays.svelte'
   import SoftAurora from './SoftAurora.svelte'
 
@@ -70,7 +69,7 @@
   <div class="container text-only-container">
     <div class="hero-content">
       {#key currentIndex}
-        <div class="content-wrapper" in:fade={{ duration: 500 }} out:fade={{ duration: 500 }}>
+        <div class="content-wrapper">
           <h1 class="content-title">{content[currentIndex].title}</h1>
           <p class="content-desc">{content[currentIndex].desc}</p>
         </div>
