@@ -3,14 +3,12 @@
   import SoftAurora from "./SoftAurora.svelte";
 </script>
 
-<section id="services">
+<section id="services" class="snap-section">
   <div class="aurora-bg">
     <SoftAurora />
   </div>
-  <div class="container">
+  <div class="container snap-container">
     <h2>What We Do</h2>
-    <p class="section-intro">Six strategic disciplines delivered as one coherent agency, so your brand always moves with commercial clarity.</p>
-
     <div class="services-grid">
       <PixelCard>
         <div class="service-box-content">
@@ -57,12 +55,16 @@
     </div>
 
     <div class="service-notes">
-      <p>Crost Media is built to hold strategy, creative and delivery together so each output is directly connected to commercial momentum.</p>
     </div>
   </div>
 </section>
 
 <style>
+  .snap-section {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  
   section {
     padding: 4rem 0;
     position: relative;
@@ -107,6 +109,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    justify-items: center;
   }
 
   .service-box-content {
