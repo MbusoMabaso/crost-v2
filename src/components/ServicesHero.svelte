@@ -98,6 +98,9 @@
     align-items: start;
     text-align: left;
     margin-bottom: 2rem;
+    min-height: 250px;
+    position: relative;
+    z-index: 10;
   }
 
   .content-title {
@@ -115,6 +118,8 @@
     display: flex !important;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 10;
   }
 
   .hero-content {
