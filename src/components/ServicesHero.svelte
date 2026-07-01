@@ -19,8 +19,37 @@
       title: 'Commerce',
       desc: 'The world’s most advanced end-to-end commerce specialist.',
       image: '/direction/Screenshot_2026-07-01_13-06-59.png'
+    },
+    {
+      title: 'Experiential',
+      desc: 'Activating brands at the center of culture.',
+      image: '/direction/Screenshot_2026-07-01_13-07-24.png'
+    },
+    {
+      title: 'Health',
+      desc: 'Shaping a healthier, more connected world.',
+      image: '/direction/Screenshot_2026-07-01_13-07-43.png'
+    },
+    {
+      title: 'Media',
+      desc: 'Designing ecosystems for growth.',
+      image: '/direction/Screenshot_2026-07-01_13-08-08.png'
+    },
+    {
+      title: 'Precision Marketing',
+      desc: 'Omnicom\'s performance powerhouse.',
+      image: '/direction/Screenshot_2026-07-01_13-08-25.png'
+    },
+    {
+      title: 'Production',
+      desc: 'Delivering connected content at scale.',
+      image: '/direction/Screenshot_2026-07-01_13-09-05.png'
+    },
+    {
+      title: 'Public Relations',
+      desc: 'Omnicom\'s reputation and influence authority.',
+      image: '/direction/Screenshot_2026-07-01_13-12-18.png'
     }
-    // Note: Add more content here as needed, based on remaining images.
   ]
 
   let currentIndex = 0
