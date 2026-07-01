@@ -1,5 +1,10 @@
 <script>
+  import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
   import Iridescence from './Iridescence.svelte'
+
+  let visible = false
+  onMount(() => visible = true)
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -9,29 +14,31 @@
   }
 </script>
 
-<section id="about-hero">
-  <div class="iridescence-bg">
-    <Iridescence
-      color={[0.7, 0.8, 1]}
-      mouseReact={true}
-      amplitude={0.05}
-      speed={0.5}
-    />
-  </div>
-  <div class="container">
-    <div class="hero-content">
-      <h1>Strategy and creativity, held to the same standard.</h1>
-      <p>Crost Media strategically combines brand strategy, creative production, and digital execution into a single, coherent service, so our clients never have to manage three separate agencies to achieve one result.</p>
-      <div class="cta-buttons">
-        <button class="btn btn-primary" on:click={() => scrollToSection('about')}>Our Process</button>
-        <button class="btn btn-secondary" on:click={() => scrollToSection('team')}>Meet the Team</button>
+{#if visible}
+  <section id="about-hero" transition:fade={{ duration: 750 }}>
+    <div class="iridescence-bg">
+      <Iridescence
+        color={[0.7, 0.8, 1]}
+        mouseReact={true}
+        amplitude={0.05}
+        speed={0.5}
+      />
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Strategy and creativity, held to the same standard.</h1>
+        <p>Crost Media strategically combines brand strategy, creative production, and digital execution into a single, coherent service, so our clients never have to manage three separate agencies to achieve one result.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary" on:click={() => scrollToSection('about')}>Our Process</button>
+          <button class="btn btn-secondary" on:click={() => scrollToSection('team')}>Meet the Team</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/LogoFullName.svg" alt="Crost Media About Hero" />
       </div>
     </div>
-    <div class="hero-image">
-      <img src="/LogoFullName.svg" alt="Crost Media About Hero" />
-    </div>
-  </div>
-</section>
+  </section>
+{/if}
 
 <style>
   .container {

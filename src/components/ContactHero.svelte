@@ -1,5 +1,10 @@
 <script>
+  import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
   import LightRays from './lib/LightRays.svelte'
+
+  let visible = false
+  onMount(() => visible = true)
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -9,24 +14,26 @@
   }
 </script>
 
-<section id="contact-hero">
-  <div class="rays-bg">
-    <LightRays raysOrigin="top-center" raysColor="#ffffff" raysSpeed={1} />
-  </div>
-  <div class="container">
-    <div class="hero-content">
-      <h1>Let's Start Your Journey</h1>
-      <p>Whether you're a celebrity, executive, or business looking to build influence and protect your reputation, we're here to help.</p>
-      <div class="cta-buttons">
-        <button class="btn btn-primary" on:click={() => scrollToSection('contact')}>Send Message</button>
-        <a href="#/services" class="btn btn-secondary text-center flex items-center justify-center">Our Services</a>
+{#if visible}
+  <section id="contact-hero" transition:fade={{ duration: 750 }}>
+    <div class="rays-bg">
+      <LightRays raysOrigin="top-center" raysColor="#ffffff" raysSpeed={1} />
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Let's Start Your Journey</h1>
+        <p>Whether you're a celebrity, executive, or business looking to build influence and protect your reputation, we're here to help.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary" on:click={() => scrollToSection('contact')}>Send Message</button>
+          <a href="#/services" class="btn btn-secondary text-center flex items-center justify-center">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/LogoFullName.svg" alt="Crost Media Contact Hero" />
       </div>
     </div>
-    <div class="hero-image">
-      <img src="/LogoFullName.svg" alt="Crost Media Contact Hero" />
-    </div>
-  </div>
-</section>
+  </section>
+{/if}
 
 <style>
   .container {

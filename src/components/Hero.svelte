@@ -1,5 +1,10 @@
 <script>
+  import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
   import Waves from './lib/Waves.svelte'
+
+  let visible = false
+  onMount(() => visible = true)
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -9,24 +14,26 @@
   }
 </script>
 
-<section id="hero">
-  <div class="dot-bg">
-    <Waves lineColor="#1256d8" backgroundColor="transparent" />
-  </div>
-  <div class="container">
-    <div class="hero-content">
-      <h1>An integrated strategic creative agency, built to make brands matter commercially.</h1>
-      <p>One team, one brief, one definition of success, across EMEA.</p>
-      <div class="cta-buttons">
-        <button class="btn btn-primary" on:click={() => scrollToSection('contact')}>Work With Us</button>
-        <button class="btn btn-secondary" on:click={() => scrollToSection('process')}>How We Work</button>
+{#if visible}
+  <section id="hero" transition:fade={{ duration: 750 }}>
+    <div class="dot-bg">
+      <Waves lineColor="#1256d8" backgroundColor="transparent" />
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>An integrated strategic creative agency, built to make brands matter commercially.</h1>
+        <p>One team, one brief, one definition of success, across EMEA.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary" on:click={() => scrollToSection('contact')}>Work With Us</button>
+          <button class="btn btn-secondary" on:click={() => scrollToSection('process')}>How We Work</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/LogoFullName.svg" alt="Crost Media Logo" />
       </div>
     </div>
-    <div class="hero-image">
-      <img src="/LogoFullName.svg" alt="Crost Media Logo" />
-    </div>
-  </div>
-</section>
+  </section>
+{/if}
 
 <style>
   .container {

@@ -1,6 +1,11 @@
 <script>
+  import { onMount } from 'svelte'
+  import { fade } from 'svelte/transition'
   import LightRays from './LightRays.svelte'
   import GridDistortion from './lib/GridDistortion.svelte'
+
+  let visible = false
+  onMount(() => visible = true)
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -10,33 +15,35 @@
   }
 </script>
 
-<section id="differentiators-hero">
-  <div class="aurora-bg">
-    <GridDistortion 
-      imageSrc="/CapabilitiesBackground.jpg" 
-      grid={15} 
-      mouse={0.1} 
-      strength={0.15} 
-      relaxation={0.9} 
-    />
-  </div>
-  <div style="z-index: -1;">
-    <LightRays />
-  </div>
-  <div class="container">
-    <div class="hero-content">
-      <h1 style="color: black;">What Sets Us Apart?</h1>
-      <p style="color: black; font-weight: 500;">We ask what a brand needs to achieve before we consider how it should look. The work's visual quality is a consequence of the clarity of thinking, not a substitute for it.</p>
-      <div class="cta-buttons">
-        <button class="btn btn-primary" on:click={() => scrollToSection('differentiators')}>Our Differentiators</button>
-        <button class="btn btn-secondary" on:click={() => scrollToSection('mission')}>Our Mission & Vision</button>
+{#if visible}
+  <section id="differentiators-hero" transition:fade={{ duration: 750 }}>
+    <div class="aurora-bg">
+      <GridDistortion 
+        imageSrc="/CapabilitiesBackground.jpg" 
+        grid={15} 
+        mouse={0.1} 
+        strength={0.15} 
+        relaxation={0.9} 
+      />
+    </div>
+    <div style="z-index: -1;">
+      <LightRays />
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 style="color: black;">What Sets Us Apart?</h1>
+        <p style="color: black; font-weight: 500;">We ask what a brand needs to achieve before we consider how it should look. The work's visual quality is a consequence of the clarity of thinking, not a substitute for it.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary" on:click={() => scrollToSection('differentiators')}>Our Differentiators</button>
+          <button class="btn btn-secondary" on:click={() => scrollToSection('mission')}>Our Mission & Vision</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/LogoFullName.svg" alt="Crost Media Differentiators Hero" />
       </div>
     </div>
-    <div class="hero-image">
-      <img src="/LogoFullName.svg" alt="Crost Media Differentiators Hero" />
-    </div>
-  </div>
-</section>
+  </section>
+{/if}
 
 <style>
   .container {

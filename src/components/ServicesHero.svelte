@@ -67,7 +67,7 @@
   }
 </script>
 {#if visible}
-  <section id="services-hero" transition:fade={{ duration: 1000 }}>
+  <section id="services-hero" transition:fade={{ duration: 750 }}>
     <div class="aurora-bg">
       <SoftAurora />
     </div>
