@@ -71,13 +71,12 @@
     }
   }
 </script>
-
 <section id="services-hero">
   <div class="aurora-bg">
     <SoftAurora />
   </div>
   <LightRays />
-  <div class="container">
+  <div class="container text-only-container">
     <div class="hero-content">
       {#key currentIndex}
         <div in:fade={{ duration: 500 }} out:fade={{ duration: 500 }}>
@@ -90,21 +89,26 @@
         <button class="btn btn-secondary" on:click={() => scrollToSection('pricing')}>Pricing Plans</button>
       </div>
     </div>
-    <div class="hero-image">
-      {#key currentIndex}
-        <img 
-          src={content[currentIndex].image} 
-          alt={content[currentIndex].title}
-          in:fade={{ duration: 500 }}
-          out:fade={{ duration: 500 }}
-        />
-      {/key}
-    </div>
   </div>
 </section>
 
 <style>
-  .container {
+  .text-only-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+... (rest of original styles)
+</style>
     max-width: 90%;
     margin: 0 auto;
     padding: 0 1rem;
