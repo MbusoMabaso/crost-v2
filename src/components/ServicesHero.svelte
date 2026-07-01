@@ -7,39 +7,39 @@
   const content = [
     {
       title: 'Advertising',
-      desc: 'Building the world’s most recognizable and effective brands.',
+      desc: 'Omnicom Advertising is the world\'s biggest creative network, comprised of iconic agencies trusted by almost two thirds of the world\'s leading companies to build distinctive and lasting brands that are creatively celebrated and commercially proven.',
     },
     {
       title: 'Branding',
-      desc: 'Creating brand value that drives business value.',
+      desc: 'Omnicom Branding is a catalyst for change for the world\'s biggest brands, moving businesses, people, and the world forward. Our agencies have been trusted to create some of the most recognizable brands while positioning others for tomorrow.',
     },
     {
       title: 'Commerce',
-      desc: 'The world’s most advanced end-to-end commerce specialist.',
+      desc: 'Omnicom Commerce runs on Flywheel, our cloud-based commerce and retail media accelerator. Our modern commerce solutions are seamlessly integrated across Omnicom\'s capabilities, connecting sales and marketing more closely than ever.',
     },
     {
       title: 'Experiential',
-      desc: 'Activating brands at the center of culture.',
+      desc: 'Omnicom Experiential is the most comprehensive end-to-end sports, entertainment, and experiential ecosystem in the world. With unmatched scale, talent access, media influence and cultural fluency, Experiential helps brands activate, engage, and grow.',
     },
     {
       title: 'Health',
-      desc: 'Shaping a healthier, more connected world.',
+      desc: 'Omnicom Health is the world\'s most comprehensive, multi-specialty healthcare communications network. Powered by Omni and Acxiom\'s unparalleled life-sciences data, we are an engine of creativity and science.',
     },
     {
       title: 'Media',
-      desc: 'Designing ecosystems for growth.',
+      desc: 'Omnicom Media integrates insight, data, technology and talent to help the world\'s leading brands grow faster, decide smarter, and act with certainty.',
     },
     {
       title: 'Precision Marketing',
-      desc: 'Omnicom\'s performance powerhouse.',
+      desc: 'With deeply specialized agencies and consultancies across experience design, CRM, and marketing technology, Omnicom Precision Marketing delivers transformative solutions rooted in data, technology, and AI.',
     },
     {
       title: 'Production',
-      desc: 'Delivering connected content at scale.',
+      desc: 'Omnicom Production is Omnicom\'s connected content and production engine, leveraging AI-powered tools, platforms, and connected data to support large-scale global campaigns, content amplification, and the development of scaled and synthetic content.',
     },
     {
       title: 'Public Relations',
-      desc: 'Omnicom\'s reputation and influence authority.',
+      desc: 'Omnicom Public Relations connects clients to a powerful ecosystem of expertise spanning public relations, public affairs, and specialty. When you\'re shaping perception, navigating policy, or solving high-value challenges.',
     }
   ]
 
