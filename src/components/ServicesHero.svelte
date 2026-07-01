@@ -1,6 +1,32 @@
 <script>
+  import { onMount, onDestroy } from 'svelte'
+  import { fade } from 'svelte/transition'
   import LightRays from './LightRays.svelte'
   import SoftAurora from './SoftAurora.svelte'
+
+  const images = [
+    '/direction/Screenshot_2026-07-01_13-02-21.png',
+    '/direction/Screenshot_2026-07-01_13-06-34.png',
+    '/direction/Screenshot_2026-07-01_13-06-59.png',
+    '/direction/Screenshot_2026-07-01_13-07-24.png',
+    '/direction/Screenshot_2026-07-01_13-07-43.png',
+    '/direction/Screenshot_2026-07-01_13-08-08.png',
+    '/direction/Screenshot_2026-07-01_13-08-25.png',
+    '/direction/Screenshot_2026-07-01_13-09-05.png',
+    '/direction/Screenshot_2026-07-01_13-12-18.png'
+  ]
+
+  let currentIndex = 0
+  let interval
+
+  function startCarousel() {
+    interval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length
+    }, 4000)
+  }
+
+  onMount(() => startCarousel())
+  onDestroy(() => clearInterval(interval))
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -25,7 +51,14 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="/LogoFullName.svg" alt="Crost Media Services Hero" />
+      {#key currentIndex}
+        <img 
+          src={images[currentIndex]} 
+          alt="Crost Media Service Direction" 
+          in:fade={{ duration: 500 }}
+          out:fade={{ duration: 500 }}
+        />
+      {/key}
     </div>
   </div>
 </section>
