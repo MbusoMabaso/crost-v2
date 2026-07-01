@@ -4,16 +4,23 @@
   import LightRays from './LightRays.svelte'
   import SoftAurora from './SoftAurora.svelte'
 
-  const images = [
-    '/direction/Screenshot_2026-07-01_13-02-21.png',
-    '/direction/Screenshot_2026-07-01_13-06-34.png',
-    '/direction/Screenshot_2026-07-01_13-06-59.png',
-    '/direction/Screenshot_2026-07-01_13-07-24.png',
-    '/direction/Screenshot_2026-07-01_13-07-43.png',
-    '/direction/Screenshot_2026-07-01_13-08-08.png',
-    '/direction/Screenshot_2026-07-01_13-08-25.png',
-    '/direction/Screenshot_2026-07-01_13-09-05.png',
-    '/direction/Screenshot_2026-07-01_13-12-18.png'
+  const content = [
+    {
+      title: 'Advertising',
+      desc: 'Building the world’s most recognizable and effective brands.',
+      image: '/direction/Screenshot_2026-07-01_13-02-21.png'
+    },
+    {
+      title: 'Branding',
+      desc: 'Creating brand value that drives business value.',
+      image: '/direction/Screenshot_2026-07-01_13-06-34.png'
+    },
+    {
+      title: 'Commerce',
+      desc: 'The world’s most advanced end-to-end commerce specialist.',
+      image: '/direction/Screenshot_2026-07-01_13-06-59.png'
+    }
+    // Note: Add more content here as needed, based on remaining images.
   ]
 
   let currentIndex = 0
@@ -21,7 +28,7 @@
 
   function startCarousel() {
     interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length
+      currentIndex = (currentIndex + 1) % content.length
     }, 4000)
   }
 
@@ -43,8 +50,12 @@
   <LightRays />
   <div class="container">
     <div class="hero-content">
-      <h1>What We Do</h1>
-      <p>Six strategic disciplines delivered as one coherent agency, so your brand always moves with commercial clarity.</p>
+      {#key currentIndex}
+        <div in:fade={{ duration: 500 }} out:fade={{ duration: 500 }}>
+          <h1>{content[currentIndex].title}</h1>
+          <p>{content[currentIndex].desc}</p>
+        </div>
+      {/key}
       <div class="cta-buttons">
         <button class="btn btn-primary" on:click={() => scrollToSection('services')}>Our Services</button>
         <button class="btn btn-secondary" on:click={() => scrollToSection('pricing')}>Pricing Plans</button>
@@ -53,8 +64,8 @@
     <div class="hero-image">
       {#key currentIndex}
         <img 
-          src={images[currentIndex]} 
-          alt="Crost Media Service Direction" 
+          src={content[currentIndex].image} 
+          alt={content[currentIndex].title}
           in:fade={{ duration: 500 }}
           out:fade={{ duration: 500 }}
         />
