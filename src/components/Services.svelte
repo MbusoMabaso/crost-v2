@@ -1,6 +1,5 @@
 <script lang="ts">
   import PixelCard from "../lib/components/PixelCard.svelte";
-  import LightRays from "./LightRays.svelte";
   import SoftAurora from "./SoftAurora.svelte";
 </script>
 
@@ -8,9 +7,9 @@
   <div class="aurora-bg">
     <SoftAurora />
   </div>
-  <LightRays />
   <div class="container">
     <h2>What We Do</h2>
+    <p class="section-intro">Six strategic disciplines delivered as one coherent agency, so your brand always moves with commercial clarity.</p>
 
     <div class="services-grid">
       <PixelCard>
@@ -58,6 +57,7 @@
     </div>
 
     <div class="service-notes">
+      <p>Crost Media is built to hold strategy, creative and delivery together so each output is directly connected to commercial momentum.</p>
     </div>
   </div>
 </section>
