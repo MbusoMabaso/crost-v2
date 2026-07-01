@@ -8,47 +8,38 @@
     {
       title: 'Advertising',
       desc: 'Building the world’s most recognizable and effective brands.',
-      image: '/direction/Screenshot_2026-07-01_13-02-21.png'
     },
     {
       title: 'Branding',
       desc: 'Creating brand value that drives business value.',
-      image: '/direction/Screenshot_2026-07-01_13-06-34.png'
     },
     {
       title: 'Commerce',
       desc: 'The world’s most advanced end-to-end commerce specialist.',
-      image: '/direction/Screenshot_2026-07-01_13-06-59.png'
     },
     {
       title: 'Experiential',
       desc: 'Activating brands at the center of culture.',
-      image: '/direction/Screenshot_2026-07-01_13-07-24.png'
     },
     {
       title: 'Health',
       desc: 'Shaping a healthier, more connected world.',
-      image: '/direction/Screenshot_2026-07-01_13-07-43.png'
     },
     {
       title: 'Media',
       desc: 'Designing ecosystems for growth.',
-      image: '/direction/Screenshot_2026-07-01_13-08-08.png'
     },
     {
       title: 'Precision Marketing',
       desc: 'Omnicom\'s performance powerhouse.',
-      image: '/direction/Screenshot_2026-07-01_13-08-25.png'
     },
     {
       title: 'Production',
       desc: 'Delivering connected content at scale.',
-      image: '/direction/Screenshot_2026-07-01_13-09-05.png'
     },
     {
       title: 'Public Relations',
       desc: 'Omnicom\'s reputation and influence authority.',
-      image: '/direction/Screenshot_2026-07-01_13-12-18.png'
     }
   ]
 
@@ -93,6 +84,14 @@
 </section>
 
 <style>
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .text-only-container {
     display: flex !important;
     justify-content: center;
@@ -105,15 +104,11 @@
   }
 
   .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-  }
-... (rest of original styles)
-</style>
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0 1rem;
-    width: 100%;
-    box-sizing: border-box;
   }
 
   .aurora-bg {
@@ -138,15 +133,6 @@
     padding-bottom: 2rem;
   }
 
-  #services-hero .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-
   .hero-content h1 {
     font-size: 2.5rem;
     color: var(--crost-dark);
@@ -160,13 +146,6 @@
     color: var(--crost-muted);
     margin-bottom: 2rem;
     line-height: 1.7;
-  }
-
-  .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
   }
 
   .btn {
@@ -202,86 +181,13 @@
     transform: translateY(-3px);
   }
 
-  .hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 2rem;
-  }
-
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  @media (max-width: 1024px) {
-    #services-hero .container {
-      gap: 2rem;
-    }
-
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-
-    .hero-image {
-      min-height: 250px;
-    }
-  }
-
   @media (max-width: 768px) {
-    .container {
-      padding: 0 1.5rem;
-    }
-
-    #services-hero .container {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
     .hero-content h1 {
       font-size: 1.8rem;
     }
 
     .hero-content p {
       font-size: 0.95rem;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 0.85rem 2rem;
-    }
-
-    .hero-image img {
-      max-width: 70%;
-      margin: 0 auto;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .container {
-      padding: 0 1rem;
-    }
-
-    .hero-content h1 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-content p {
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn {
-      font-size: 0.9rem;
-      padding: 0.75rem 1.5rem;
     }
   }
 </style>
