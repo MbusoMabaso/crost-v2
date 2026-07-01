@@ -70,9 +70,9 @@
   <div class="container text-only-container">
     <div class="hero-content">
       {#key currentIndex}
-        <div in:fade={{ duration: 500 }} out:fade={{ duration: 500 }}>
-          <h1>{content[currentIndex].title}</h1>
-          <p>{content[currentIndex].desc}</p>
+        <div class="content-wrapper" in:fade={{ duration: 500 }} out:fade={{ duration: 500 }}>
+          <h1 class="content-title">{content[currentIndex].title}</h1>
+          <p class="content-desc">{content[currentIndex].desc}</p>
         </div>
       {/key}
       <div class="cta-buttons">
@@ -91,20 +91,39 @@
     width: 100%;
     box-sizing: border-box;
   }
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  text-align: left;
+  margin-bottom: 2rem;
+}
 
-  .text-only-container {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+.content-title {
+  font-size: 3rem !important;
+  margin: 0 !important;
+}
 
-  .hero-content {
-    max-width: 800px;
-  }
+.content-desc {
+  font-size: 1.1rem !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
 
-  .cta-buttons {
-    display: flex;
+.text-only-container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 1000px;
+}
+
+.cta-buttons {
+  justify-content: center;
+}
     gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
