@@ -23,7 +23,7 @@
 
   function selectValue(id) {
     activeValue = id
-    startLoop()
+    clearInterval(loopInterval)
   }
 </script>
 
