@@ -8,7 +8,7 @@
     <SoftAurora />
   </div>
   <div class="container snap-container">
-    <h2>What We Do</h2>
+    <h2 class="editorial-heading">What We <span class="italic">Do</span></h2>
     <div class="services-grid">
       <PixelCard>
         <div class="service-box-content">
@@ -28,7 +28,7 @@
         <div class="service-box-content">
           <div class="service-icon"><img src="/Icons/Culture.svg" alt="Culture & Insight" class="large-enhanced-icon" /></div>
           <h3>Culture & Insight</h3>
-          <p>Market, audience and cultural intelligence that informs strategy and makes work feel relevant in the right contexts.</p>
+          <p>Market, audience and cultural intelligence that informs strategy and makes work feel relevant in context.</p>
         </div>
       </PixelCard>
       <PixelCard>
@@ -42,33 +42,34 @@
         <div class="service-box-content">
           <div class="service-icon">📈</div>
           <h3>Performance & Media</h3>
-          <p>Paid, owned and earned media execution with clear measurement and optimisation aligned to business outcomes.</p>
+          <p>Paid, owned and earned media execution with clear measurement aligned to business outcomes.</p>
         </div>
       </PixelCard>
       <PixelCard>
         <div class="service-box-content">
           <div class="service-icon">📰</div>
           <h3>Communications</h3>
-          <p>Integrated PR, corporate and reputation work that amplifies strategic positioning and executive presence.</p>
+          <p>Integrated PR and reputation work that amplifies strategic positioning and executive presence.</p>
         </div>
       </PixelCard>
-    </div>
-
-    <div class="service-notes">
     </div>
   </div>
 </section>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap');
+
   .snap-section {
     scroll-snap-align: center;
     scroll-snap-stop: always;
   }
   
   section {
-    padding: 4rem 0;
+    padding: 8rem 0;
     position: relative;
     overflow: hidden;
+    background: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   .aurora-bg {
@@ -82,33 +83,40 @@
   }
 
   .container {
-    max-width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     width: 100%;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
   }
 
-  #services {
-    background: linear-gradient(135deg, var(--crost-soft) 0%, #ffffff 100%);
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+  .editorial-heading {
+    text-align: center;
+    color: #000;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
   }
 
-  h2 {
-    text-align: center;
-    color: var(--crost-dark);
-    margin-bottom: 3rem;
-    font-size: 2rem;
+  .editorial-heading .italic {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 1.05em;
+    letter-spacing: -0.01em;
   }
 
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    width: 100%;
     justify-items: center;
   }
 
@@ -121,127 +129,65 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    z-index: 10; /* Ensure content is above canvas */
+    z-index: 10;
     position: relative;
-    color: var(--crost-dark);
+    color: #1a1a1a;
   }
 
   .service-icon {
-    font-size: 2.625rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 2.625rem;
+    height: 2.2rem;
   }
 
   .large-enhanced-icon {
-    height: 5.6rem;
-    width: 5.6rem;
+    height: 4.5rem;
+    width: 4.5rem;
   }
 
   .service-box-content h3 {
-    color: var(--crost-dark);
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    color: #000;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    font-style: italic;
   }
 
   .service-box-content p {
-    color: var(--crost-muted);
-    line-height: 1.6;
-    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
   }
 
   @media (max-width: 1024px) {
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 2.5rem;
-    }
-
     .services-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
-    }
-
-    .service-box-content {
-      padding: 1.5rem;
-    }
-
-    .service-icon {
-      font-size: 2.25rem;
-      height: 2.25rem;
     }
   }
 
   @media (max-width: 768px) {
     section {
-      padding: 3rem 0;
+      padding: 5rem 0;
     }
 
     .container {
       padding: 0 1.5rem;
     }
 
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
+    .editorial-heading {
+      font-size: 2.5rem;
     }
 
     .services-grid {
       grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .service-box-content {
-      padding: 1.5rem;
-    }
-
-    .service-icon {
-      font-size: 2rem;
-      height: 2rem;
-    }
-
-    .service-box-content h3 {
-      font-size: 1.1rem;
-    }
-
-    .service-box-content p {
-      font-size: 0.9rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    section {
-      padding: 2rem 0;
-    }
-
-    .container {
-      padding: 0 1rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .service-box-content {
-      padding: 1.25rem;
-    }
-
-    .service-icon {
-      font-size: 1.75rem;
-      height: 1.75rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .service-box-content h3 {
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .service-box-content p {
-      font-size: 0.85rem;
-      line-height: 1.5;
     }
   }
 </style>

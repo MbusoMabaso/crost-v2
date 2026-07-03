@@ -8,39 +8,39 @@
   const tabs = [
     {
       title: 'Advertising',
-      desc: 'Omnicom Advertising is the world\'s biggest creative network, comprised of iconic agencies trusted by almost two thirds of the world\'s leading companies to build distinctive and lasting brands that are creatively celebrated and commercially proven.',
+      desc: 'At Crost, we create distinctive campaigns that are creatively celebrated and commercially proven. Our approach merges high-level storytelling with strategic distribution to ensure every message reaches its mark and drives measurable growth.',
     },
     {
       title: 'Branding',
-      desc: 'Omnicom Branding is a catalyst for change for the world\'s biggest brands, moving businesses, people, and the world forward. Our agencies have been trusted to create some of the most recognizable brands while positioning others for tomorrow.',
+      desc: 'We build cohesive brand identities that act as catalysts for growth. From foundational strategy to visual systems, we position brands to resonate in current markets and scale for future opportunities with clarity and purpose.',
     },
     {
       title: 'Commerce',
-      desc: 'Omnicom Commerce runs on Flywheel, our cloud-based commerce and retail media accelerator. Our modern commerce solutions are seamlessly integrated across Omnicom\'s capabilities, connecting sales and marketing more closely than ever.',
+      desc: 'Our integrated commerce solutions bridge the gap between discovery and transaction. We optimize retail media and digital ecosystems to convert consumer attention into seamless transactions and measurable performance.',
     },
     {
       title: 'Experiential',
-      desc: 'Omnicom Experiential is the most comprehensive end-to-end sports, entertainment, and experiential ecosystem in the world. With unmatched scale, talent access, media influence and cultural fluency, Experiential helps brands activate, engage, and grow.',
+      desc: 'We craft immersive brand activations that connect scale with cultural fluency. Our experiential services help brands engage audiences through impactful end-to-end activations that bring brand stories to life in the physical and digital world.',
     },
     {
       title: 'Health',
-      desc: 'Omnicom Health is the world\'s most comprehensive, multi-specialty healthcare communications network. Powered by Omni and Acxiom\'s unparalleled life-sciences data, we are an engine of creativity and science.',
+      desc: 'Combining creative evidence with specialized intelligence, we deliver communications that navigate the complexities of the healthcare sector. We turn medical science into story and technical data into meaningful human connection.',
     },
     {
       title: 'Media',
-      desc: 'Omnicom Media integrates insight, data, technology and talent to help the world\'s leading brands grow faster, decide smarter, and act with certainty.',
+      desc: 'We integrate market insight with advanced technology to help brands grow faster and act with certainty. Our media strategies are designed to optimize impact through precision planning, data-driven execution, and unparalleled market leverage.',
     },
     {
       title: 'Precision Marketing',
-      desc: 'With deeply specialized agencies and consultancies across experience design, CRM, and marketing technology, Omnicom Precision Marketing delivers transformative solutions rooted in data, technology, and AI.',
+      desc: 'We deliver transformative marketing solutions rooted in data and AI. By focusing on experience design and CRM technology, we ensure every brand interaction is personalized, relevant, and effective across the entire customer journey.',
     },
     {
       title: 'Production',
-      desc: 'Omnicom Production is Omnicom\'s connected content and production engine, leveraging AI-powered tools, platforms, and connected data to support large-scale global campaigns, content amplification, and the development of scaled and synthetic content.',
+      desc: 'Our connected production engine leverages modern tools and AI to support large-scale content amplification. We balance high-volume output with the technical excellence required for premium global campaigns and synthetic content.',
     },
     {
       title: 'Public Relations',
-      desc: 'Omnicom Public Relations connects clients to a powerful ecosystem of expertise spanning public relations, public affairs, and specialty. When you\'re shaping perception, navigating policy, or solving high-value challenges.',
+      desc: 'We shape perception and manage high-value challenges through integrated public affairs and narrative strategy. We connect brands to the powerful ecosystems of expertise and influence that drive public discourse and long-term reputation.',
     }
   ]
 
@@ -184,66 +184,38 @@
   }
 
   .cta-buttons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: center;
   }
 
   .aurora-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
   }
 
   #services-hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    box-sizing: border-box;
-    padding-top: 5.5rem;
-    padding-bottom: 2rem;
+    min-height: 100vh; display: flex; align-items: center; width: 100%; overflow: hidden;
+    position: relative; box-sizing: border-box; padding-top: 5.5rem; padding-bottom: 2rem;
   }
 
   .btn {
-    padding: 0.9rem 2.2rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s;
+    padding: 0.9rem 2.2rem; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer;
+    font-weight: 600; transition: all 0.3s;
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #1256d8 0%, #1e73f1 100%);
-    color: white;
+    background: linear-gradient(135deg, #1256d8 0%, #1e73f1 100%); color: white;
     box-shadow: 0 4px 15px rgba(18, 86, 216, 0.25);
   }
 
   .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(18, 86, 216, 0.3);
+    transform: translateY(-3px); box-shadow: 0 8px 25px rgba(18, 86, 216, 0.3);
   }
 
   .btn-secondary {
-    background-color: transparent;
-    border: 2px solid var(--crost-primary);
-    color: var(--crost-primary);
+    background-color: transparent; border: 2px solid var(--crost-primary); color: var(--crost-primary);
   }
 
   .btn-secondary:hover {
-    background-color: var(--crost-primary);
-    color: white;
-    transform: translateY(-3px);
+    background-color: var(--crost-primary); color: white; transform: translateY(-3px);
   }
 
   @media (max-width: 768px) {

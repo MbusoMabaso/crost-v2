@@ -89,27 +89,39 @@
       </div>
     {/if}
 
-    <div class="process-flow">
-      <h3>Our process</h3>
-      <div class="flow-grid">
-        <div class="flow-step">
-          <span>1</span>
-          <h4>Commercial Brief</h4>
+    <div class="values-section">
+      <h2 class="editorial-heading">OUR <span class="italic">PROCESS</span></h2>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-header">
+            <span class="value-marker">■</span>
+            <h4>Commercial Brief</h4>
+          </div>
           <p>We begin with the commercial problem, the desired outcome and the audience behaviour that will justify the work.</p>
         </div>
-        <div class="flow-step">
-          <span>2</span>
-          <h4>Strategic Architecture</h4>
+
+        <div class="value-card">
+          <div class="value-header">
+            <span class="value-marker">■</span>
+            <h4>Strategic Architecture</h4>
+          </div>
           <p>We turn that brief into a positioning, narrative and creative architecture that can be activated consistently.</p>
         </div>
-        <div class="flow-step">
-          <span>3</span>
-          <h4>Creative Execution</h4>
+
+        <div class="value-card">
+          <div class="value-header">
+            <span class="value-marker">■</span>
+            <h4>Creative Execution</h4>
+          </div>
           <p>We produce assets, systems and content that are designed to work in real media and digital environments.</p>
         </div>
-        <div class="flow-step">
-          <span>4</span>
-          <h4>Performance Momentum</h4>
+
+        <div class="value-card">
+          <div class="value-header">
+            <span class="value-marker">■</span>
+            <h4>Performance Momentum</h4>
+          </div>
           <p>We measure results, capture learnings and optimise the next phase so the work compounds over time.</p>
         </div>
       </div>
@@ -118,14 +130,17 @@
 </section>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap');
+
   section {
     padding: 4rem 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   .container {
-    max-width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -141,6 +156,7 @@
     color: var(--crost-dark);
     margin-bottom: 2.5rem;
     font-size: 2rem;
+    font-weight: 800;
   }
 
   .pricing-tabs {
@@ -187,42 +203,29 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  @media (max-width: 1024px) {
-    .pricing-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .pricing-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
+    margin-bottom: 4rem;
   }
 
   .price-card {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     border-radius: 12px;
-    border: 2px solid var(--crost-border);
-    box-shadow: 0 4px 12px rgba(10, 31, 61, 0.08);
-    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
   }
 
   .price-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--crost-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   }
 
   .price-card.featured {
     border-color: var(--crost-primary);
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(18, 86, 216, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(18, 86, 216, 0.15);
   }
 
   .badge {
@@ -240,8 +243,9 @@
 
   .price-card h3 {
     color: var(--crost-dark);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    font-weight: 700;
   }
 
   .features {
@@ -250,172 +254,188 @@
   }
 
   .features li {
-    padding: 0.5rem 0;
-    color: var(--crost-muted);
+    padding: 0.6rem 0;
+    color: #555;
     display: flex;
     align-items: center;
+    font-size: 0.95rem;
   }
 
   .features li:before {
-    content: '✓';
+    content: '■';
     color: var(--crost-primary);
-    font-weight: bold;
-    margin-right: 0.75rem;
-    font-size: 1.2rem;
+    margin-right: 1rem;
+    font-size: 0.7rem;
   }
 
   .btn {
     width: 100%;
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-radius: 50px;
     font-size: 1rem;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s;
     background-color: #ffffff;
     color: var(--crost-dark);
-    border: 1px solid var(--crost-border);
+    border: 2px solid var(--crost-primary);
   }
 
   .btn:hover {
-    background-color: #f2f5ff;
+    background-color: var(--crost-primary);
+    color: white;
   }
 
   .btn-featured {
-    background: linear-gradient(135deg, var(--crost-primary) 0%, var(--crost-primary) 100%);
+    background: var(--crost-primary);
     color: white;
-    box-shadow: 0 4px 12px rgba(18, 86, 216, 0.3);
-  }
-
-  .btn-featured:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(18, 86, 216, 0.4);
+    border: none;
   }
 
   .business-services {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
   }
 
   .service-item {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 12px;
     border-left: 4px solid var(--crost-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
-
-  .process-flow {
-    margin-top: 3rem;
-    padding: 2.5rem;
-    background: linear-gradient(180deg, #ffffff 0%, var(--crost-soft) 100%);
-    border-radius: 18px;
-    border: 1px solid rgba(18, 86, 216, 0.12);
-  }
-
-  .process-flow h3 {
-    text-align: center;
-    color: var(--crost-dark);
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-  }
-
-  .flow-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-
-  .flow-step {
-    background: white;
-    padding: 1.75rem;
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(10, 31, 61, 0.08);
-    text-align: left;
-  }
-
-  .flow-step span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--crost-primary);
-    color: white;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .flow-step h4 {
-    margin-bottom: 0.75rem;
-    color: var(--crost-dark);
-    font-size: 1.1rem;
-  }
-
-  .flow-step p {
-    color: var(--crost-muted);
-    line-height: 1.75;
-    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 
   .service-item h3 {
     color: var(--crost-dark);
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 700;
   }
 
   .service-item p {
-    color: #666;
-    line-height: 1.6;
+    color: #555;
+    line-height: 1.7;
   }
 
   .cta-box {
     grid-column: 1 / -1;
-    background: linear-gradient(135deg, var(--crost-dark) 0%, var(--crost-dark) 100%);
+    background: var(--crost-dark);
     color: white;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(10, 31, 61, 0.2);
+    box-shadow: 0 20px 40px rgba(10, 31, 61, 0.2);
   }
 
   .cta-box h3 {
     color: white;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
   }
 
   .cta-box p {
-    color: #ddd;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
   }
 
   .cta-box .btn {
     background-color: var(--crost-primary);
     color: white;
-    max-width: 80%;
+    border: none;
+    max-width: 300px;
     margin: 0 auto;
   }
 
-  .cta-box .btn:hover {
-    background-color: var(--crost-primary);
+  /* NEW PROCESS STYLING (Matched to Culture Page Values) */
+  .values-section {
+    margin-top: 6rem;
+    padding-top: 6rem;
+    border-top: 1px solid #eee;
+  }
+
+  .editorial-heading {
+    color: #000;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .editorial-heading .italic {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 1.05em;
+    letter-spacing: -0.01em;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .value-card {
+    padding: 1rem 0 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+  }
+
+  .value-card:hover {
+    border-color: #000;
+  }
+
+  .value-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .value-marker {
+    color: #1256d8;
+    font-size: 0.7rem;
+  }
+
+  .value-card h4 {
+    color: #000;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .value-card p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 1.95rem;
+  }
+
+  @media (max-width: 1024px) {
+    .pricing-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 768px) {
-    .pricing-grid {
-      grid-template-columns: 1fr;
+    .container {
+      padding: 0 1.5rem;
     }
 
-    .price-card.featured {
-      transform: none;
-    }
-
-    .business-services {
+    .pricing-grid, .business-services, .values-grid {
       grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
     .cta-box {
@@ -428,6 +448,14 @@
 
     .tab-btn {
       width: 100%;
+    }
+
+    .value-card p {
+      padding-left: 0;
+    }
+
+    .editorial-heading {
+      font-size: 2.75rem;
     }
   }
 </style>

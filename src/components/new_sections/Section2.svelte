@@ -239,6 +239,8 @@
 </section>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
   .section-2 {
     background-color: #0a0a0a;
     background:
@@ -250,13 +252,14 @@
         rgba(18, 18, 18, 0) 49.73%
       ),
       linear-gradient(180deg, #000 4.65%, rgba(0, 0, 0, 0) clamp(340px, 43.54rem - 24.76vw, 600px)),
-      url("/wp-content/uploads/2026/05/1486d37ab0ab15daf57de2ff1f9bd25dc90c048b.jpg") lightgray
+      url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80") lightgray
         50% / cover no-repeat;
     color: #ffffff;
     padding: 100px 0;
     width: 100%;
     position: relative;
     overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   .container {
@@ -277,7 +280,6 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    font-family: "Instrument Sans", sans-serif;
     font-size: clamp(14px, 0.73rem + 0.30vw, 16px);
     font-weight: 600;
     letter-spacing: 0.16px;
@@ -297,7 +299,6 @@
   .s2-text {
     margin: 0;
     width: clamp(100px, -3.68rem + 42.35vw, 551px);
-    font-family: "Instrument Sans", sans-serif;
     font-size: clamp(14px, 0.73rem + 0.30vw, 16px);
     font-weight: 400;
     line-height: 160%;
@@ -308,11 +309,11 @@
     margin: 0;
     padding-top: 20px;
     width: clamp(100px, -3.68rem + 42.35vw, 551px);
-    font-family: "Instrument Sans", sans-serif;
     font-size: clamp(30px, 0.73rem + 2.38vw, 46px);
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1;
     color: #ffffff;
+    letter-spacing: -0.04em;
   }
 
   .s2-row {
@@ -356,9 +357,8 @@
 
   .s2-card-title {
     margin: 0;
-    font-family: "Instrument Sans", sans-serif;
     font-size: clamp(16px, 0.91rem + 0.38vw, 20px);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 120%;
     letter-spacing: -0.4px;
     color: #000;
@@ -366,9 +366,8 @@
 
   .s2-card-text {
     margin: 0;
-    font-family: "Instrument Sans", sans-serif;
     font-size: clamp(14px, 0.73rem + 0.30vw, 16px);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 153%;
     color: #1b1b1b;
   }

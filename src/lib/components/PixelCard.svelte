@@ -11,23 +11,25 @@
 		constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, x: number, y: number, color: string, speed: number, delay: number, distance: number) {
 			this.width = canvas.width; this.height = canvas.height; this.ctx = ctx;
 			this.x = x; this.y = y; this.color = color;
-			this.speed = (Math.random() * 0.8 + 0.1) * speed;
-			this.sizeStep = Math.random() * 0.4;
-			// 3D Depth effect: pixels further from center are smaller
+			// Increased base speed multiplier for "extremely fast"
+			this.speed = (Math.random() * 2.0 + 0.5) * speed;
+			// Faster growth step
+			this.sizeStep = Math.random() * 1.5 + 0.5;
 			const maxDistance = Math.sqrt(Math.pow(this.width/2, 2) + Math.pow(this.height/2, 2));
 			const scale = 1 - (distance / maxDistance) * 0.5;
 			this.maxSize = (Math.random() * (this.maxSizeInteger - this.minSize) + this.minSize) * scale;
-			this.delay = delay;
-			this.counterStep = Math.random() * 4 + (this.width + this.height) * 0.01;
+			// Lower delay for faster reaction
+			this.delay = delay * 0.2;
+			// Significantly faster counter progression
+			this.counterStep = Math.random() * 20 + (this.width + this.height) * 0.1;
 		}
 		draw() {
 			const o = this.maxSizeInteger * 0.5 - this.size * 0.5;
-			// Add subtle depth: opacity based on size
 			const opacity = 0.5 + (this.size / this.maxSize) * 0.5;
 			this.ctx.globalAlpha = opacity;
 			this.ctx.fillStyle = this.color;
 			this.ctx.fillRect(this.x + o, this.y + o, this.size, this.size);
-			this.ctx.globalAlpha = 1.0; // Reset
+			this.ctx.globalAlpha = 1.0;
 		}
 		appear() {
 			this.isIdle = false;
@@ -39,7 +41,7 @@
 		disappear() {
 			this.isShimmer = false; this.counter = 0;
 			if (this.size <= 0) { this.isIdle = true; return; }
-			this.size -= 0.1;
+			this.size -= 0.5; // Faster disappearance
 			this.draw();
 		}
 		shimmer() {
@@ -50,17 +52,17 @@
 	}
 
 	function getEffectiveSpeed(value: number, reducedMotion: boolean) {
-		const min = 0, max = 100, throttle = 0.001;
+		const min = 0, max = 500, throttle = 0.005; // Increased max and throttle
 		if (value <= min || reducedMotion) return min;
 		if (value >= max) return max * throttle;
 		return value * throttle;
 	}
 
 	const VARIANTS = {
-		default: { activeColor: null, gap: 1, speed: 200, colors: '#f0f0f0,#e0e0e0,#ffffff', noFocus: false },
-		blue: { activeColor: '#85d4f8', gap: 1, speed: 200, colors: '#85d4f8,#5bbef5,#b3e6ff', noFocus: false },
-		yellow: { activeColor: '#85d4f8', gap: 1, speed: 200, colors: '#85d4f8,#5bbef5,#b3e6ff', noFocus: false },
-		pink: { activeColor: '#85d4f8', gap: 1, speed: 200, colors: '#85d4f8,#5bbef5,#b3e6ff', noFocus: true }
+		default: { activeColor: null, gap: 1, speed: 400, colors: '#f0f0f0,#e0e0e0,#ffffff', noFocus: false },
+		blue: { activeColor: '#85d4f8', gap: 1, speed: 400, colors: '#85d4f8,#5bbef5,#b3e6ff', noFocus: false },
+		yellow: { activeColor: '#85d4f8', gap: 1, speed: 400, colors: '#85d4f8,#5bbef5,#b3e6ff', noFocus: false },
+		pink: { activeColor: '#85d4f8', gap: 1, speed: 400, colors: '#85d4f8,#5bbef5,#b3e6ff', noFocus: true }
 	} as const;
 
 	export type PixelVariant = keyof typeof VARIANTS;
