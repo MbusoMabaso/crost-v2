@@ -2,7 +2,6 @@
 </script>
 
 <section id="culture">
-  <div class="gradient-divider"></div>
   <div class="container">
     <div class="intro-section">
       <div class="intro-content">

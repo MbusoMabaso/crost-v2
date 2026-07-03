@@ -1,7 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  // We'll import gsap if available, or use the global one if the project setup allows.
-  // For now, assuming gsap is available globally as per the original HTML.
 
   let wrapper;
   let container;
@@ -15,7 +13,6 @@
   let seps = [];
 
   // Configuration
-  const prefix = 's2';
   const mobileBreakpoint = 640;
   const CAROUSEL_SPEED = 900;
   const CAROUSEL_DUR_MIN = 0.45;
@@ -164,72 +161,47 @@
       updatePosition();
     }
   }
-
-  function handleTouchStart(e) {
-    touchStartX = e.changedTouches[0].screenX;
-  }
-
-  let touchStartX = 0;
-  function handleTouchEnd(e) {
-    if (!isCarouselActive()) return;
-    const diff = touchStartX - e.changedTouches[0].screenX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0 && currentPosition < maxPosition) {
-        currentPosition++;
-        updatePosition();
-      } else if (diff < 0 && currentPosition > 0) {
-        currentPosition--;
-        updatePosition();
-      }
-    }
-  }
 </script>
 
 <section class="section-2">
   <div class="s2-inner container">
     <span class="s2-eyebrow">
-      <img class="s2-eyebrow-bg" src="/wp-content/uploads/2026/03/meetOmni-badge.png" alt="" aria-hidden="true">
-      <span class="s2-eyebrow-dot"></span>
-      <span>The OPEN Pillars</span>
+      <div class="s2-eyebrow-dot"></div>
+      <span>Our Culture Pillars</span>
     </span>
 
     <div class="s2-row">
-      <h2 class="s2-heading">Inclusion, Innovation, and&nbsp;Impact</h2>
+      <h2 class="s2-heading">Clarity, Curiosity, and Connection</h2>
       <p class="s2-text">
-        The OPEN strategy brings inclusion and impact into the workplace
-        through&nbsp;three key tenets:
+        We drive brand value by operationalizing our three core cultural tenets:
       </p>
     </div>
 
     <div class="s2-carousel">
       <div class="s2-cards" bind:this={wrapper}>
         <div class="s2-cards-inner" bind:this={container}>
-          <div class="s2-card is-active">
-            <p class="s2-card-title">Inclusion</p>
+          <div class="s2-card is-active" bind:this={cards[0]}>
+            <p class="s2-card-title">Commercial Clarity</p>
             <p class="s2-card-text">
-              Opening pathways for growth and building workplaces where
-              belonging and inclusion aren’t just welcomed. They’re how we
-              operate.
+              We begin every engagement by uncovering the core business objective. We ask the hard questions to ensure every creative decision serves a measurable goal.
             </p>
           </div>
           <p class="s2-card-sep" bind:this={seps[0]}>
             <span><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none"><path d="M25.1265 14.6721C26.3815 14.6721 27.3988 15.6897 27.3991 16.9446V22.6382H32.3993C33.6544 22.6382 34.6717 23.6557 34.6719 24.9107C34.6718 26.1658 33.6544 27.1832 32.3993 27.1832H27.3991V32.3996C27.3989 33.6546 26.3816 34.6721 25.1265 34.6721C23.8715 34.672 22.8541 33.6545 22.8539 32.3996V27.1832L16.9445 27.184C15.6895 27.1839 14.6722 26.1664 14.6719 24.9115C14.6719 23.6564 15.6893 22.6391 16.9445 22.639L22.8539 22.6382V16.9454C22.854 15.6904 23.8714 14.6722 25.1265 14.6721Z" fill="#FAFAFA" fill-opacity="0.9"></path></svg></span>
           </p>
-          <div class="s2-card">
-            <p class="s2-card-title">Innovation</p>
+          <div class="s2-card" bind:this={cards[1]}>
+            <p class="s2-card-title">Creative Curiosity</p>
             <p class="s2-card-text">
-              Powering curiosity and creating space where anyone’s ideas,
-              contributions, and work are welcomed.
+              We foster a workspace where ideas are tested, not just presented. Our team combines strategy and design to find innovative paths to audience engagement.
             </p>
           </div>
           <p class="s2-card-sep" bind:this={seps[1]}>
             <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M17.7272 9.33333C18.9824 9.33333 20 10.378 20 11.6667C20 12.9553 18.9824 14 17.7272 14H2.27278C1.01756 14 0 12.9553 0 11.6667C0 10.378 1.01756 9.33333 2.27278 9.33333H17.7272Z" fill="#FAFAFA" fill-opacity="0.9"></path><path d="M17.7272 0C18.9824 0 20 1.04467 20 2.33333C20 3.622 18.9824 4.66667 17.7272 4.66667H2.27278C1.01756 4.66667 0 3.622 0 2.33333C0 1.04467 1.01756 0 2.27278 0H17.7272Z" fill="#FAFAFA" fill-opacity="0.9"></path></svg></span>
           </p>
-          <div class="s2-card">
-            <p class="s2-card-title">Impact</p>
+          <div class="s2-card" bind:this={cards[2]}>
+            <p class="s2-card-title">Collective Connection</p>
             <p class="s2-card-text">
-              Driving collective action to deliver culturally relevant,
-              world-class results for our clients.
+              Storytelling and technology work in unison at Crost. We connect the dots between brand identity and digital performance to deliver world-class impact.
             </p>
           </div>
         </div>
@@ -237,7 +209,7 @@
 
       <div class="s2-nav" bind:this={nav}>
         <div class="s2-nav-arrows">
-          <button class="s2-arrow-btn s2-arrow-prev" on:click={prev} aria-label="Previous slide">
+          <button class="s2-arrow-btn s2-arrow-prev" on:click={prev} aria-label="Previous slide" bind:this={prevBtn}>
             <svg class="arrow-ico arrow-ico-default" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63" fill="none">
               <rect width="62.4802" height="62.4802" rx="31.2401" fill="#B7B7B7"></rect>
               <path d="M43.6483 31.0164L20.8501 31.464" stroke="#2D2D2D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -249,7 +221,7 @@
               <path d="M32.0986 19.8398L20.8491 31.391L32.4002 42.6405" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </button>
-          <button class="s2-arrow-btn s2-arrow-next" on:click={next} aria-label="Next slide">
+          <button class="s2-arrow-btn s2-arrow-next" on:click={next} aria-label="Next slide" bind:this={nextBtn}>
             <svg class="arrow-ico arrow-ico-default" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63" fill="none">
               <rect width="62.4802" height="62.4802" rx="31.2401" fill="#B7B7B7"></rect>
               <path d="M43.6483 31.0164L20.8501 31.464" stroke="#2D2D2D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -262,7 +234,11 @@
             </svg>
           </button>
         </div>
-        <div class="s2-pill-indicator" bind:this={pillIndicator}></div>
+        <div class="s2-pill-indicator" bind:this={pillIndicator}>
+           <div class="s2-pill-dot active"></div>
+           <div class="s2-pill-dot"></div>
+           <div class="s2-pill-dot"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -280,10 +256,10 @@
         rgba(18, 18, 18, 0) 49.73%
       ),
       linear-gradient(180deg, #000 4.65%, rgba(0, 0, 0, 0) clamp(340px, 43.54rem - 24.76vw, 600px)),
-      url("/wp-content/uploads/2026/05/1486d37ab0ab15daf57de2ff1f9bd25dc90c048b.jpg") lightgray
+      url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80") lightgray
         50% / cover no-repeat;
     color: #ffffff;
-    padding: 60px 0;
+    padding: 100px 0;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -298,36 +274,19 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    width: 272px;
-    height: 41px;
-    padding: 6px 14px;
+    gap: 12px;
     font-family: "Instrument Sans", sans-serif;
     font-size: clamp(14px, 0.73rem + 0.30vw, 16px);
     font-weight: 600;
     letter-spacing: 0.16px;
     line-height: 1.4;
-  }
-
-  .s2-eyebrow-bg {
-    position: absolute;
-    width: 440px !important;
-    max-width: none !important;
-    height: 196px !important;
-    top: -77px;
-    left: -81px;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .s2-eyebrow > :not(.s2-eyebrow-bg) {
-    position: relative;
-    z-index: 1;
+    color: #fff;
+    text-transform: uppercase;
   }
 
   .s2-eyebrow-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     flex-shrink: 0;
     background-color: #fff;
@@ -391,10 +350,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-
-  .s2-card.is-active {
-    /* Active state can be used for specific animations if needed */
+    min-width: 320px;
   }
 
   .s2-card-title {
@@ -426,27 +382,18 @@
     pointer-events: none;
   }
 
-  .s2-card-sep span {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media (max-width: 992px) {
-    .s2-card {
-      flex: 0 0 calc((100% - 88px) / 2);
-    }
-  }
-
   @media (max-width: 640px) {
+    .s2-row {
+        flex-direction: column;
+        gap: 20px;
+    }
     .s2-card {
-      flex: 0 0 calc(100% - 28px);
+      min-width: 280px;
     }
   }
 
   .s2-nav {
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;

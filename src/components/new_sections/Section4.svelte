@@ -3,103 +3,60 @@
 
   let wrapper;
   let container;
-  let nav;
-  let prevBtn;
-  let nextBtn;
-  let pillIndicator;
   let cards;
-  let currentPosition = 0;
-  let maxPosition = 0;
 
   // Configuration
   const prefix = 's4';
-  const mobileBreakpoint = 768;
-
-  function getMaxScroll() {
-    if (!container || !wrapper) return 0;
-    const s = getComputedStyle(wrapper);
-    const visibleWidth = wrapper.offsetWidth - (parseFloat(s.paddingLeft) || 0) - (parseFloat(s.paddingRight) || 0);
-    return Math.max(0, container.scrollWidth - visibleWidth);
-  }
-
-  function getMaxPosition() {
-    if (!container || !cards || cards.length === 0) return 0;
-    const step = cards[1]?.offsetLeft - cards[0].offsetLeft || cards[0].offsetWidth;
-    if (step <= 0) return 0;
-    return Math.max(1, Math.ceil(getMaxScroll() / step));
-  }
-
-  onMount(() => {
-    maxPosition = getMaxPosition();
-    const handleResize = () => {
-      maxPosition = getMaxPosition();
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  });
 </script>
 
 <section class="section-4">
   <div class="s4-inner container">
-    <!-- child 1 — paragraph -->
     <span class="s4-eyebrow">
-      <img class="s4-eyebrow-bg" src="/wp-content/uploads/2026/03/meetOmni-badge-02.png" alt="" aria-hidden="true">
-      <span class="s4-eyebrow-dot"></span>
-      <span>OPEN Centers of Excellence</span>
+      <div class="s4-eyebrow-dot"></div>
+      <span>Crost Centers of Excellence</span>
     </span>
 
-    <!-- child 2 — flex-row, justify-content: space-between -->
     <div class="s4-row">
-      <h2 class="s4-heading">From Inclusion Into Impact</h2>
+      <h2 class="s4-heading">Strategy Driven, Creative Led</h2>
       <p class="s4-text">
-        OPEN operates through three Centers of Excellence, each focused on
-        a different dimension of how inclusion drives our business:
+        Our culture operates through three core focus areas, each dedicated to bridging the gap between high-level brand strategy and measurable digital execution.
       </p>
     </div>
 
-    <!-- feature 1 — image left, text right -->
+    <!-- feature 1 -->
     <div class="s4-feature">
-      <img class="s4-feature-img" src="/wp-content/uploads/2026/06/s4-how-we-work.jpg" alt="Two Omnicom colleagues, one using a wheelchair, talking in a workplace lounge">
+      <img class="s4-feature-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Creative team collaborating in a bright workspace">
       <div class="s4-feature-col">
-        <p class="s4-feature-eyebrow">How We Work</p>
+        <p class="s4-feature-eyebrow">The Creative Standard</p>
         <h3 class="s4-feature-title">
-          Culture &amp; Workplace Experience: Why Employee Development
-          Matters
+          Clarity of Thinking: The Foundation of Quality
         </h3>
         <p class="s4-text">
-          Culture is built in the day-to-day. Through engagement,
-          community, and continuous learning, we shape a
-          workplace where every person feels valued, connected, and
-          equipped to grow.
+          Visual quality at Crost is a direct consequence of clear strategic thinking. We foster an environment where every design choice is rooted in commercial logic, ensuring the work is as effective as it is beautiful.
         </p>
       </div>
     </div>
 
-    <!-- feature 2 — reversed: image right, text left (image is still first in the DOM → image-first on mobile) -->
+    <!-- feature 2 -->
     <div class="s4-feature s4-feature-reverse">
-      <img class="s4-feature-img" src="/wp-content/uploads/2026/06/s4-how-we-lead.jpg" alt="A group of Omnicom colleagues in discussion around a meeting table">
+      <img class="s4-feature-img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Team lead facilitating a workshop">
       <div class="s4-feature-col">
-        <p class="s4-feature-eyebrow">How We Lead</p>
-        <h3 class="s4-feature-title">Social Impact &amp; Advocacy</h3>
+        <p class="s4-feature-eyebrow">Continuous Evolution</p>
+        <h3 class="s4-feature-title">Professional Growth & Mastery</h3>
         <p class="s4-text">
-          Influence carries responsibility. We use our platform and
-          partnerships to champion inclusion beyond our walls, proving that corporate
-          responsibility and business results aren’t competing priorities.
+          We prioritize the growth of our people through a culture of mentorship and shared intelligence. By combining diverse backgrounds in design, culture, and technology, we create a workplace where continuous learning is mandatory.
         </p>
       </div>
     </div>
 
-    <!-- feature 3 — image left, text right (same order as feature 1) -->
+    <!-- feature 3 -->
     <div class="s4-feature">
-      <img class="s4-feature-img" src="/wp-content/uploads/2026/06/s4-how-we-win.jpg" alt="Two Omnicom colleagues collaborating in an office">
+      <img class="s4-feature-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Digital analytics dashboard on a screen">
       <div class="s4-feature-col">
-        <p class="s4-feature-eyebrow">How We Win</p>
-        <h3 class="s4-feature-title">Inclusive Business Performance</h3>
+        <p class="s4-feature-eyebrow">Unified Execution</p>
+        <h3 class="s4-feature-title">Integrated Technical Excellence</h3>
         <p class="s4-text">
-          Better work starts with broader thinking. We equip teams with
-          cultural intelligence, consistent guidance, and proven
-          strategies so the work we put into market reflects the audiences
-          it’s meant to reach.
+          We eliminate the friction between separate agencies. Our integrated approach ensures that strategy, storytelling, and digital technology work in unison to deliver results that exceed traditional agency benchmarks.
         </p>
       </div>
     </div>
@@ -226,14 +183,9 @@
       flex: 0 0 auto;
       width: 100%;
     }
-    .s2-text,
-    .s2-heading,
     .s4-row .s4-heading,
     .s4-row .s4-text {
       width: 100%;
-    }
-    .s2-text {
-      margin-top: 30px;
     }
   }
 
@@ -241,38 +193,21 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    width: 272px;
-    height: 41px;
-    padding: 6px 14px;
+    gap: 12px;
     font-family: "Instrument Sans", sans-serif;
     font-size: clamp(14px, 0.73rem + 0.30vw, 16px);
     font-weight: 600;
     letter-spacing: 0.16px;
     line-height: 1.4;
-  }
-
-  .s4-eyebrow-bg {
-    position: absolute;
-    width: 440px !important;
-    max-width: none !important;
-    height: 196px !important;
-    top: -77px;
-    left: -86px;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .s4-eyebrow > :not(.s4-eyebrow-bg) {
-    position: relative;
-    z-index: 1;
+    color: #1256d8;
+    text-transform: uppercase;
   }
 
   .s4-eyebrow-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     flex-shrink: 0;
-    background-color: #000;
+    background-color: #1256d8;
   }
 </style>

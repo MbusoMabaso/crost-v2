@@ -7,12 +7,11 @@
   let prevBtn;
   let nextBtn;
   let pillIndicator;
-  let cards;
+  let cards = [];
   let currentPosition = 0;
   let maxPosition = 0;
 
   // Configuration
-  const prefix = 's3';
   const mobileBreakpoint = 768;
   const CAROUSEL_SPEED = 900;
   const CAROUSEL_DUR_MIN = 0.45;
@@ -78,7 +77,7 @@
       dot.classList.toggle('active', index === activeIndex);
     });
     cards.forEach((card, index) => {
-      card.classList.toggle('is-active', index === activeIndex);
+      if (card) card.classList.toggle('is-active', index === activeIndex);
     });
   }
 
@@ -145,110 +144,82 @@
       updatePosition();
     }
   }
-
-  function handleTouchStart(e) {
-    touchStartX = e.changedTouches[0].screenX;
-  }
-
-  let touchStartX = 0;
-  function handleTouchEnd(e) {
-    if (!isCarouselActive()) return;
-    const diff = touchStartX - e.changedTouches[0].screenX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0 && currentPosition < maxPosition) {
-        currentPosition++;
-        updatePosition();
-      } else if (diff < 0 && currentPosition > 0) {
-        currentPosition--;
-        updatePosition();
-      }
-    }
-  }
 </script>
 
 <section class="section-3">
   <div class="s3-inner container">
     <span class="s3-eyebrow">
-      <img class="s3-eyebrow-bg" src="/wp-content/uploads/2026/03/meetOmni-badge-03.png" alt="" aria-hidden="true">
-      <span class="s3-eyebrow-dot"></span>
-      <span>OPEN in Action</span>
+      <div class="s3-eyebrow-dot"></div>
+      <span>Crost in Motion</span>
     </span>
 
     <div class="s3-carousel">
       <div class="s3-cards" bind:this={wrapper}>
         <div class="s3-cards-inner" bind:this={container}>
-          <div class="s3-card is-active">
+
+          <div class="s3-card is-active" bind:this={cards[0]}>
             <div class="s3-card-intro">
-              <h2 class="s3-card-heading">Fueling the People</h2>
+              <h2 class="s3-card-heading">Empowering the Team</h2>
               <p class="s3-card-intro-text">
-                OPEN creates real opportunities for participation and
-                leadership across the Omnicom network:
+                At Crost, we provide structural support for leadership and professional development across our entire creative network:
               </p>
             </div>
-            <div class="s3-card-box" style="background-image: url('/wp-content/uploads/2026/06/s3-fueling-people.jpg')">
+            <div class="s3-card-box" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80')">
               <div class="s3-subcards">
                 <div class="s3-subcard">
-                  <h3 class="s3-subcard-text">Business Resource Groups (BRGs)</h3>
+                  <h3 class="s3-subcard-text">Specialist Intelligence Groups (SIGs)</h3>
                   <p class="s3-subcard-text">
-                    Our BRGs are open to everyone. They’re where community
-                    takes shape across agencies, disciplines, geographies, and spaces to connect, share perspectives,
-                    and support each other’s growth. Omnicom’s BRGs
-                    include: AcentO, ALC, Black Together, OmniVets,
-                    Omniwomen, OPEN Disability, and OPEN Pride.
+                    Our SIGs connect experts across different geographies to share market intelligence and emerging technology trends. They ensure our clients benefit from global perspectives regardless of their local market.
                   </p>
                 </div>
                 <div class="s3-subcard">
-                  <h3 class="s3-subcard-text">Global OPEN House Series</h3>
+                  <h3 class="s3-subcard-text">Collaborative Workshops</h3>
                   <p class="s3-subcard-text">
-                    Through in-person and virtual events hosted at our agencies, we bring the global community together to spotlight regional wins and show how inclusion priorities are being activated locally.
+                    We host recurring virtual and in-person summits where teams spotlight regional successes and demonstrate how strategic principles are being activated in real-world campaigns.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="s3-card">
+          <div class="s3-card" bind:this={cards[1]}>
             <div class="s3-card-intro">
-              <h2 class="s3-card-heading">Fueling the Business</h2>
+              <h2 class="s3-card-heading">Empowering the Work</h2>
               <p class="s3-card-intro-text">
-                <strong style="font-weight: 700">RoundZero: Ensuring Inclusion from the Start</strong><br>Inclusion enters the work before the work begins.
-                RoundZero is Omnicom’s approach to embedding cultural
-                intelligence and diverse perspectives before the brief,
-                before the pitch, and before a single concept takes shape.
-                It comes to life through three components:
+                <strong style="font-weight: 700">LevelZero: Building Clarity from the Ground Up</strong><br>
+                Strategic clarity enters the process before the creative begins. LevelZero is our framework for embedding market intelligence before the first concept takes shape.
               </p>
             </div>
-            <div class="s3-card-box s3-card-box-low" style="background-image: url('/wp-content/uploads/2026/06/s3-fueling-business.jpg')">
+            <div class="s3-card-box s3-card-box-low" style="background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80')">
               <div class="s3-subcards">
                 <div class="s3-subcard">
-                  <h3 class="s3-subcard-text">Content</h3>
+                  <h3 class="s3-subcard-text">Evidence</h3>
                   <p class="s3-subcard-text">
-                    The proof. We showcase how inclusive thinking leads to
-                    work that drives real results for clients.
+                    We lead with proof. We document how strategic alignment leads to work that moves audiences and achieves commercial KPIs.
                   </p>
                 </div>
                 <div class="s3-subcard">
-                  <h3 class="s3-subcard-text">Capabilities</h3>
+                  <h3 class="s3-subcard-text">Frameworks</h3>
                   <p class="s3-subcard-text">
-                    Tools and offerings that help agencies build inclusive
-                    practices into creative development from day one.
+                    Custom tools and methodologies that help our teams build consistent brand narratives into creative execution from day one.
                   </p>
                 </div>
                 <div class="s3-subcard">
-                  <h3 class="s3-subcard-text">Curriculum</h3>
+                  <h3 class="s3-subcard-text">Knowledge</h3>
                   <p class="s3-subcard-text">
-                    Training that equips every Omnicom employee with the practices behind more inclusive work.
+                    Structured training that equips every Crost strategist and designer with the methodologies behind world-class performance.
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
       <div class="s3-nav" bind:this={nav}>
         <div class="s3-nav-arrows">
-          <button class="s3-arrow-btn s3-arrow-prev" on:click={prev} aria-label="Previous slide">
+          <button class="s3-arrow-btn s3-arrow-prev" on:click={prev} aria-label="Previous slide" bind:this={prevBtn}>
             <svg class="arrow-ico arrow-ico-default" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63" fill="none">
               <rect width="62.4802" height="62.4802" rx="31.2401" fill="#B7B7B7"></rect>
               <path d="M43.6483 31.0164L20.8501 31.464" stroke="#2D2D2D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -260,7 +231,7 @@
               <path d="M32.0986 19.8398L20.8491 31.391L32.4002 42.6405" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </button>
-          <button class="s3-arrow-btn s3-arrow-next" on:click={next} aria-label="Next slide">
+          <button class="s3-arrow-btn s3-arrow-next" on:click={next} aria-label="Next slide" bind:this={nextBtn}>
             <svg class="arrow-ico arrow-ico-default" xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63" fill="none">
               <rect width="62.4802" height="62.4802" rx="31.2401" fill="#B7B7B7"></rect>
               <path d="M43.6483 31.0164L20.8501 31.464" stroke="#2D2D2D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -273,7 +244,10 @@
             </svg>
           </button>
         </div>
-        <div class="s3-pill-indicator" bind:this={pillIndicator}></div>
+        <div class="s3-pill-indicator" bind:this={pillIndicator}>
+           <div class="s3-pill-dot active"></div>
+           <div class="s3-pill-dot"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -283,7 +257,7 @@
   .section-3 {
     background-color: #000;
     color: #ffffff;
-    padding: 60px 0;
+    padding: 100px 0;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -295,15 +269,6 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
-  }
-
-  .s3-text {
-    margin: 0;
-    font-family: "Instrument Sans", sans-serif;
-    font-size: clamp(14px, 0.73rem + 0.30vw, 16px);
-    font-weight: 400;
-    line-height: 160%;
-    color: #ffffff;
   }
 
   .s3-heading {
@@ -370,25 +335,13 @@
     border-radius: 30px;
     padding: clamp(15px, 0.57rem + 1.45vw, 30px) clamp(15px, 0.33rem + 2.41vw, 40px);
     margin-top: 30px;
-    height: clamp(686px, 46.35rem - 3.857vw, 726px);
+    height: clamp(600px, 40rem, 700px);
     display: flex;
     align-items: flex-end;
   }
 
   .s3-card-box-low {
     background-position: center 32%;
-  }
-
-  @media (max-width: 768px) {
-    .s3-card-box-low {
-      background-image: url('/wp-content/uploads/2026/06/s3-fueling-business-mobile.jpg') !important;
-      background-position: center top;
-    }
-    .s3-card-box:not(.s3-card-box-low) {
-      background-image: url('/wp-content/uploads/2026/06/a8770e51ec8828d748cf1c299a0e1f20cbc2d585.jpg') !important;
-      background-size: 460% auto;
-      background-position: 45% calc(158px - 116.3vw);
-    }
   }
 
   .s3-card-intro {
@@ -463,8 +416,8 @@
   }
 
   .s3-arrow-btn {
-    width: clamp(45px, 1.46rem + 2.83vw, 64px);
-    height: clamp(45px, 1.46rem + 2.83vw, 64px);
+    width: 64px;
+    height: 64px;
     position: relative;
     cursor: pointer;
     border: none;
@@ -502,16 +455,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: clamp(45px, 1.46rem + 2.83vw, 64px);
-    height: clamp(45px, 1.46rem + 2.83vw, 64px);
+    width: 64px;
+    height: 64px;
   }
 
   .s3-arrow-next .arrow-ico {
     transform: translate(-50%, -50%) scaleX(-1);
-  }
-
-  .arrow-ico-hover {
-    display: none;
   }
 
   .s3-arrow-btn:hover .arrow-ico-default {
@@ -532,17 +481,8 @@
     .s3-card {
       flex: 0 0 auto;
     }
-    .s3-card:nth-of-type(2) {
-      padding-top: 0;
-    }
     .s3-subcards {
       flex-direction: column;
-    }
-    .s3-subcard-text:first-child {
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -0.4px;
     }
   }
 
@@ -550,36 +490,20 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    width: 272px;
-    height: 41px;
-    padding: 6px 14px;
+    gap: 12px;
     font-family: "Instrument Sans", sans-serif;
     font-size: clamp(14px, 0.73rem + 0.30vw, 16px);
     font-weight: 600;
     letter-spacing: 0.16px;
     line-height: 1.4;
-  }
-
-  .s3-eyebrow-bg {
-    position: absolute;
-    width: 440px !important;
-    max-width: none !important;
-    height: 196px !important;
-    top: -77px;
-    left: -81px;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .s3-eyebrow > :not(.s3-eyebrow-bg) {
-    position: relative;
-    z-index: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
   }
 
   .s3-eyebrow-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     flex-shrink: 0;
     background-color: #fff;
