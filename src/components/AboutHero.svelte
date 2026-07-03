@@ -19,33 +19,33 @@
   let revealEnd = $state(0)
 
   const advantagePills = [
-    { label: 'Strongest Media Ecosystem', id: 'advantage-0' },
-    { label: 'Most Influential Content', id: 'advantage-1' },
-    { label: 'Connected Commerce Excellence', id: 'advantage-2' },
-    { label: 'Enterprise Generative AI Capability', id: 'advantage-3' },
-    { label: 'Identity Leadership', id: 'advantage-4' }
+    { label: 'Orchestrated Brand Intelligence', id: 'advantage-0' },
+    { label: 'Narrative-Driven Performance', id: 'advantage-1' },
+    { label: 'Converged Commerce Architectures', id: 'advantage-2' },
+    { label: 'Autonomous Creative Workflows', id: 'advantage-3' },
+    { label: 'Privacy-First Audience Sovereignty', id: 'advantage-4' }
   ]
 
   const advantageDetails = [
     {
-      title: 'Strongest Media Ecosystem',
-      text: 'Our unparalleled media scale, market leverage, and intelligence—based in Acxiom RealID™ and advanced ID-less solutions—unify paid, owned, earned, and commerce channels into a privacy-first system that delivers measurable performance.'
+      title: 'Orchestrated Brand Intelligence',
+      text: 'We unify fragmented data streams into a single source of truth. Our intelligence-led approach ensures that every creative decision is backed by market evidence, resulting in work that resonates deeply and performs predictably.'
     },
     {
-      title: 'Most Influential Content',
-      text: 'We create influential content that moves audiences, builds brand preference, and drives measurable commerce outcomes in every channel.'
+      title: 'Narrative-Driven Performance',
+      text: 'We don’t just create content; we build influence. By centering every campaign on a core human truth, we develop brand narratives that capture attention and move audiences toward measurable commerce outcomes.'
     },
     {
-      title: 'Connected Commerce Excellence',
-      text: 'Our commerce experiences connect media, data, and creative to turn attention into transactions across digital and retail ecosystems.'
+      title: 'Converged Commerce Architectures',
+      text: 'We eliminate the distance between brand desire and final purchase. Our commerce systems integrate storytelling directly into the transactional journey, optimizing for speed, trust, and repeat customer behavior.'
     },
     {
-      title: 'Enterprise Generative AI Capability',
-      text: 'We harness generative AI responsibly to amplify efficiency, personalize experiences, and unlock new creative workflows at scale.'
+      title: 'Autonomous Creative Workflows',
+      text: 'We deploy AI-powered tools to augment, not replace, human creativity. By automating the high-volume technical tasks of production, we free our teams to focus on the high-value strategic thinking that sets your brand apart.'
     },
     {
-      title: 'Identity Leadership',
-      text: 'We protect and activate identity-based media strategies so brands can deliver relevant experiences without compromising consumer privacy.'
+      title: 'Privacy-First Audience Sovereignty',
+      text: 'In an era of shifting data regulations, we protect your brand’s reach. We design audience strategies that respect consumer privacy while maintaining the precision required for personalized, impactful digital delivery.'
     }
   ]
 
@@ -56,19 +56,19 @@
   const content = {
     'Overview': {
       title: 'Strategy and creativity, held to the same standard.',
-      text: `Crost Media strategically combines brand strategy, creative production, and digital execution into a single, coherent service, so our clients never have to manage three separate agencies to achieve one result.`
+      text: `At Crost, we eliminate the fragmentation between brand strategy and creative production. We operate as a single, high-fidelity partner to ensure your vision remains intact from the first brief to the final pixel.`
     },
     'Capability Leadership': {
       title: 'Capability Leadership',
-      text: 'We coordinate cross-disciplinary leadership to ensure capability-led delivery across strategy, creative and technology.'
+      text: 'Our leadership team bridges the gap between creative excellence and commercial performance. We ensure every output is not only visually superior but technically sound and strategically aligned.'
     },
     'Corporate Leadership': {
       title: 'Corporate Leadership',
-      text: 'Our corporate leadership team ensures governance, oversight and long-term strategic alignment for client portfolios.'
+      text: 'We provide dedicated oversight for complex brand ecosystems. Our leadership focus is on sustainable growth, ensuring that every creative investment contributes to long-term brand equity.'
     },
     'Corporate Governance': {
       title: 'Corporate Governance',
-      text: 'We embed transparent governance practices that keep creative risk managed and outcomes measurable.'
+      text: 'We prioritize transparency and accountability in every engagement. Our governance models are built to manage risk while maintaining the agility required for modern digital-first execution.'
     }
   }
 
@@ -160,13 +160,14 @@
       <div class="container">
         <div class="blur-grid">
           <div class="blur-copy">
-            <span>Reveal on scroll</span>
-            <h2>Visual motion that appears as you move.</h2>
-            <p>Scroll down past the hero to reveal a refined visual panel that highlights our creative approach.</p>
-            <ul>
-              <li>Clear, spacious layout</li>
-              <li>Refined typography</li>
-              <li>Animated reveal</li>
+            <span class="blur-eyebrow">Connected Impact</span>
+            <h2 class="editorial-heading">Growth through <span class="italic">connected</span> capabilities.</h2>
+            <p class="blur-text">Our Connected Capabilities across media, commerce, and creative delivery ensure that your brand resonates at every touchpoint of the global landscape.</p>
+            <ul class="blur-list">
+              <li>Media, Commerce & Consulting</li>
+              <li>Precision Marketing & Advertising</li>
+              <li>Production, Health & Public Relations</li>
+              <li>Branding & Experiential</li>
             </ul>
           </div>
           <div class="blur-visual">
@@ -200,9 +201,12 @@
                   key={activeAdvantageIndex}
                 ></lottie-player>
               </div>
-              <div class="advantage-details">
-                <h2 class="advantage-title">{advantageDetails[activeAdvantageIndex].title}</h2>
-                <p class="advantage-desc">{advantageDetails[activeAdvantageIndex].text}</p>
+              <div class="advantage-details-card">
+                <div class="card-header">
+                  <span class="card-marker">■</span>
+                  <h3 class="card-title">{advantageDetails[activeAdvantageIndex].title}</h3>
+                </div>
+                <p class="card-description">{advantageDetails[activeAdvantageIndex].text}</p>
               </div>
             </div>
 
@@ -230,19 +234,26 @@
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap');
+
   /* RESET GLOBAL OVERFLOWS IN CASE THEY ARE PERSISTING */
   :global(body), :global(html), :global(#app) {
     overflow-x: visible !important;
   }
 
-  .about-hero-root { width: 100%; position: relative; }
+  .about-hero-root {
+    width: 100%;
+    position: relative;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1a1a1a;
+  }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; width: 100%; box-sizing: border-box; }
   .relative { position: relative; }
   .z-10 { z-index: 10; }
 
   #about-hero {
     min-height: 100vh; display: flex; align-items: center; position: relative;
-    background: #ffffff; padding: 80px 0; overflow: hidden;
+    background: #ffffff; padding: 100px 0; overflow: hidden;
   }
   .iridescence-bg { position: absolute; inset: 0; z-index: 0; }
   .hero-flex { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
@@ -254,33 +265,75 @@
   .about-menu button {
     background: none; border: none; padding: 0.6rem 1.2rem; cursor: pointer;
     font-weight: 500; border-radius: 50px; transition: 0.3s;
+    font-family: 'Inter', sans-serif;
   }
   .about-menu button.active { background: #1256d8; color: #fff; }
 
-  .hero-content h1 { font-size: clamp(2.2rem, 4.5vw, 3.8rem); line-height: 1.1; margin-bottom: 1.5rem; }
-  .hero-content p { font-size: 1.1rem; color: #666; margin-bottom: 2.5rem; max-width: 500px; }
+  /* REVERTING HERO TITLE STYLING PER REQUEST, JUST KEEPING THE FONT */
+  #about-hero h1 {
+    font-size: 2.5rem;
+    color: var(--crost-dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+  #about-hero p {
+    font-size: 1rem;
+    color: var(--crost-muted);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
 
   .cta-buttons { display: flex; gap: 1rem; }
-  .btn { padding: 0.9rem 2.2rem; border-radius: 50px; font-weight: 600; cursor: pointer; transition: 0.3s; }
+  .btn { padding: 0.9rem 2.2rem; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; font-family: 'Inter', sans-serif; }
   .btn-primary { background: #1256d8; color: #fff; border: none; }
   .btn-secondary { background: transparent; border: 2px solid #1256d8; color: #1256d8; }
   .hero-image img { width: 100%; max-width: 380px; }
 
-  .hero-blur-section { padding: 100px 0; background: #f8f9fa; opacity: 0; transition: 0.8s; }
+  .hero-blur-section { padding: 120px 0; background: #f8f9fa; opacity: 0; transition: 0.8s; }
   .hero-blur-section.revealed { opacity: 1; }
   .blur-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .blur-copy h2 { font-size: 2.3rem; margin: 1.2rem 0; }
-  .blur-copy ul { list-style: none; padding: 0; display: grid; gap: 0.6rem; }
-  .blur-copy li::before { content: "→"; margin-right: 0.8rem; color: #1256d8; }
+
+  .editorial-heading {
+    color: #000;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  .editorial-heading .italic {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 1.05em;
+    letter-spacing: -0.01em;
+  }
+
+  .blur-eyebrow {
+    display: block;
+    color: #1256d8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .blur-text { font-size: 1.25rem; color: #4a4a4a; line-height: 1.6; margin-bottom: 2rem; }
+  .blur-list { list-style: none; padding: 0; display: grid; gap: 0.8rem; }
+  .blur-list li::before { content: "→"; margin-right: 0.8rem; color: #1256d8; }
   .video-blur-card { height: 400px; border-radius: 24px; background: #fff; border: 1px solid #eee; overflow: hidden; }
 
-  /* PINNING SECTION FIXES */
+  /* PINNING SECTION STYLING (MATCHED TO CULTURE VALUES) */
   .advantage-pin-wrapper {
     position: relative;
     height: 350vh;
     width: 100%;
     background: #fff;
-    /* This must NOT have overflow: hidden */
     overflow: visible !important;
   }
 
@@ -296,26 +349,60 @@
 
   .pin-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 4rem;
     align-items: center;
     width: 100%;
   }
 
-  .pin-visual-col { position: relative; }
+  .pin-visual-col { position: relative; min-height: 400px; display: flex; align-items: center; }
   .lottie-container {
     position: absolute; left: -80px; top: 50%; transform: translateY(-50%);
-    width: 550px; height: 550px; opacity: 0.1; pointer-events: none;
+    width: 550px; height: 550px; opacity: 0.15; pointer-events: none;
   }
-  .advantage-details { position: relative; z-index: 2; }
-  .advantage-title { font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; margin-bottom: 1.2rem; }
-  .advantage-desc { font-size: 1.1rem; color: #555; line-height: 1.6; }
+
+  .advantage-details-card {
+    position: relative;
+    z-index: 2;
+    padding: 1rem 0 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center; gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-marker {
+    color: #1256d8;
+    font-size: 0.7rem;
+  }
+
+  .card-title {
+    color: #000;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .card-description {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 1.95rem;
+  }
 
   .pills-stack { display: flex; flex-direction: column; gap: 0.75rem; }
   .advantage-pill {
-    padding: 0.9rem 1.8rem; border-radius: 50px; border: 1px solid #eee;
+    padding: 1rem 1.8rem; border-radius: 50px; border: 1px solid #eee;
     background: #fafafa; text-align: left; cursor: pointer; font-weight: 600;
     transition: 0.25s ease; font-size: 0.95rem; color: #666;
+    font-family: 'Inter', sans-serif;
   }
   .advantage-pill:hover { border-color: #ccc; }
   .advantage-pill.active { background: #000; color: #fff; border-color: #000; transform: translateX(8px); }
@@ -326,8 +413,10 @@
   @media (max-width: 1024px) {
     .hero-flex, .blur-grid, .pin-grid { grid-template-columns: 1fr; gap: 3rem; }
     .advantage-pin-wrapper { height: auto; }
-    .sticky-container { position: relative; height: auto; padding: 60px 0; }
+    .sticky-container { position: relative; height: auto; padding: 100px 0; }
     .lottie-container { width: 300px; height: 300px; left: 50%; transform: translate(-50%, -50%); }
     .advantage-pill.active { transform: none; }
+    .editorial-heading { font-size: 2.5rem; }
+    .card-description { padding-left: 0; }
   }
 </style>

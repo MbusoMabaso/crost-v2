@@ -15,267 +15,190 @@
   ]
 
   const teamMembers = [
-    {
-      id: 3,
-      name: 'Andile Mbambo',
-      role: 'Designer'
-    },
-    {
-      id: 4,
-      name: 'Gugulethu Shweni',
-      role: 'Senior Creative'
-    },
-    {
-      id: 5,
-      name: 'Senior Creative & Strategy',
-      role: ''
-    },
-    {
-      id: 6,
-      name: 'Kgositsile Monamod',
-      role: 'Client Relations & New Business'
-    },
-    {
-      id: 7,
-      name: 'Rahul Baruah',
-      role: 'Branding & Design'
-    }
+    { id: 3, name: 'Andile Mbambo', role: 'Designer' },
+    { id: 4, name: 'Gugulethu Shweni', role: 'Senior Creative' },
+    { id: 6, name: 'Kgositsile Monamod', role: 'Client Relations & New Business' },
+    { id: 7, name: 'Rahul Baruah', role: 'Branding & Design' }
   ]
 </script>
 
 <section id="team">
   <div class="container">
-    <h2>T H E &nbsp; T E A M</h2>
+    <div class="values-section">
+      <h2 class="editorial-heading">THE <span class="italic">TEAM</span></h2>
 
-    <div class="team-leaders">
-      {#each teamLeaders as leader}
-        <div class="leader-card">
-          <div class="leader-info">
-            <h3>{leader.name}</h3>
-            <p class="role-label">{leader.role}</p>
+      <div class="values-grid">
+        {#each teamLeaders as leader}
+          <div class="value-card leader-card">
+            <div class="value-header">
+              <span class="value-marker">■</span>
+              <h4>{leader.name}</h4>
+            </div>
+            <p class="role-subtitle">{leader.role}</p>
             <p class="description">{leader.description}</p>
           </div>
-        </div>
-      {/each}
-    </div>
+        {/each}
+      </div>
 
-    <div class="team-grid">
-      {#each teamMembers as member}
-        {#if member.role}
-          <div class="team-member">
-            <h4>{member.name}</h4>
+      <div class="team-grid">
+        {#each teamMembers as member}
+          <div class="member-item">
+            <div class="member-header">
+              <span class="value-marker">■</span>
+              <h5>{member.name}</h5>
+            </div>
             <p class="member-role">{member.role}</p>
           </div>
-        {/if}
-      {/each}
+        {/each}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap');
+
   section {
-    padding: 4rem 0;
+    padding: 8rem 0;
+    background: #ffffff;
+    font-family: 'Inter', sans-serif;
   }
 
   .container {
-    max-width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     width: 100%;
     box-sizing: border-box;
   }
 
-  #team {
-    background: linear-gradient(135deg, #ffffff 0%, var(--crost-soft) 100%);
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  h2 {
+  .editorial-heading {
+    color: #000;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
     text-align: center;
-    color: var(--crost-dark);
-    margin-bottom: 3rem;
-    font-size: 2rem;
-    letter-spacing: 3px;
   }
 
-  .team-leaders {
+  .editorial-heading .italic {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 1.05em;
+    letter-spacing: -0.01em;
+  }
+
+  .values-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    margin-bottom: 4rem;
+    gap: 4rem;
+    margin-bottom: 6rem;
   }
 
-  .leader-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 12px;
-    border-left: 4px solid var(--crost-primary);
-    box-shadow: 0 8px 24px rgba(10, 31, 61, 0.08);
+  .value-card {
+    padding: 1rem 0 2rem;
+    border-bottom: 1px solid #f0f0f0;
     transition: all 0.3s ease;
   }
 
-  .leader-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(18, 86, 216, 0.15);
+  .value-card:hover {
+    border-color: #000;
   }
 
-  .leader-info h3 {
-    font-size: 1.5rem;
-    color: var(--crost-dark);
+  .value-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
     margin-bottom: 0.5rem;
   }
 
-  .role-label {
-    color: var(--crost-primary);
+  .value-marker {
+    color: #1256d8;
+    font-size: 0.7rem;
+  }
+
+  .value-card h4 {
+    color: #000;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .role-subtitle {
+    color: #1256d8;
     font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
-    letter-spacing: 0.5px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .description {
-    color: var(--crost-muted);
-    line-height: 1.8;
-    font-size: 0.95rem;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
     margin: 0;
+    padding-left: 1.95rem;
   }
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(18, 86, 216, 0.1);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding-top: 4rem;
+    border-top: 1px solid #eee;
   }
 
-  .team-member {
-    background: white;
-    padding: 1.75rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(10, 31, 61, 0.05);
-    transition: all 0.3s ease;
+  .member-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f9f9f9;
   }
 
-  .team-member:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(18, 86, 216, 0.12);
+  .member-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
   }
 
-  .team-member h4 {
-    color: var(--crost-dark);
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
-    line-height: 1.3;
+  .member-item h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
   }
 
   .member-role {
-    color: var(--crost-primary);
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin: 0;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
+    color: #666;
+    font-size: 0.95rem;
+    padding-left: 1.6rem;
   }
 
   @media (max-width: 1024px) {
-    h2 {
-      font-size: 1.8rem;
-    }
-
-    .team-leaders {
+    .values-grid, .team-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .team-grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      gap: 3rem;
     }
   }
 
   @media (max-width: 768px) {
     section {
-      padding: 3rem 0;
+      padding: 5rem 0;
     }
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 2.5rem;
+    .container {
+      padding: 0 1.5rem;
     }
-
-    .leader-card {
-      padding: 2rem;
+    .value-card p, .role-subtitle, .member-role {
+      padding-left: 0;
     }
-
-    .leader-info h3 {
-      font-size: 1.3rem;
-    }
-
-    .description {
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    .team-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      padding-top: 1.5rem;
-    }
-
-    .team-member {
-      padding: 1.5rem;
-    }
-
-    .team-member h4 {
-      font-size: 0.95rem;
-    }
-
-    .member-role {
-      font-size: 0.8rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    section {
-      padding: 2rem 0;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 2rem;
-    }
-
-    .leader-card {
-      padding: 1.5rem;
-    }
-
-    .leader-info h3 {
-      font-size: 1.1rem;
-    }
-
-    .description {
-      font-size: 0.85rem;
-    }
-
-    .team-grid {
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-      padding-top: 1.25rem;
-    }
-
-    .team-member {
-      padding: 1.25rem;
-    }
-
-    .team-member h4 {
-      font-size: 0.9rem;
-    }
-
-    .member-role {
-      font-size: 0.75rem;
+    .editorial-heading {
+      font-size: 2.75rem;
     }
   }
 </style>
