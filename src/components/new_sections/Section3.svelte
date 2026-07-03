@@ -13,10 +13,6 @@
 
   // Configuration
   const mobileBreakpoint = 768;
-  const CAROUSEL_SPEED = 900;
-  const CAROUSEL_DUR_MIN = 0.45;
-  const CAROUSEL_DUR_MAX = 1.2;
-  const CAROUSEL_EASE = "power2.inOut";
 
   function getVisibleWidth() {
     if (!wrapper) return 0;
@@ -49,12 +45,12 @@
 
   function getCardWidth() {
     if (!cards || cards.length === 0) return 0;
-    return cards[0].offsetWidth;
+    return cards[0]?.offsetWidth || 0;
   }
 
   function getStep() {
     if (cards.length < 2) return getCardWidth() + getGap();
-    return cards[1].offsetLeft - cards[0].offsetLeft;
+    return (cards[1]?.offsetLeft || 0) - (cards[0]?.offsetLeft || 0);
   }
 
   function getMaxScroll() {
@@ -69,9 +65,9 @@
   }
 
   function updatePillIndicator() {
-    if (!pillIndicator || !cards || !nav) return;
-    const pillDots = nav.querySelectorAll('.s3-pill-dot');
-    const activeIndex = currentPosition >= maxPosition ? cards.length - 1 : Math.min(currentPosition, cards.length - 1);
+    if (!pillIndicator || !cards) return;
+    const pillDots = pillIndicator.querySelectorAll('.s3-pill-dot');
+    const activeIndex = Math.min(currentPosition, cards.length - 1);
     
     pillDots.forEach((dot, index) => {
       dot.classList.toggle('active', index === activeIndex);
@@ -90,24 +86,18 @@
   function updatePosition() {
     if (!isCarouselActive()) {
       currentPosition = 0;
-      if (window.gsap) window.gsap.set(container, { x: 0 });
-      else if (container) container.style.transform = "";
+      if (container) container.style.transform = "";
       return;
     }
 
     const maxScroll = getMaxScroll();
-    const xPos = currentPosition >= maxPosition ? maxScroll : Math.min(currentPosition * getStep(), maxScroll);
+    const xPos = Math.min(currentPosition * getStep(), maxScroll);
 
     if (window.gsap) {
-      const currentX = window.gsap.getProperty(container, "x") || 0;
-      const distance = Math.abs(-xPos - currentX);
-      const duration = Math.min(CAROUSEL_DUR_MAX, Math.max(CAROUSEL_DUR_MIN, distance / CAROUSEL_SPEED));
-      
       window.gsap.to(container, {
         x: -xPos,
-        duration: duration,
-        ease: CAROUSEL_EASE,
-        force3D: true,
+        duration: 0.6,
+        ease: "power2.inOut",
       });
     } else if (container) {
       container.style.transform = `translateX(${-xPos}px)`;
@@ -147,7 +137,7 @@
 </script>
 
 <section class="section-3">
-  <div class="s3-inner container">
+  <div class="container s3-inner">
     <span class="s3-eyebrow">
       <div class="s3-eyebrow-dot"></div>
       <span>Crost in Motion</span>
@@ -264,6 +254,14 @@
     isolation: isolate;
   }
 
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .s3-inner {
     display: flex;
     flex-direction: column;
@@ -271,21 +269,10 @@
     z-index: 1;
   }
 
-  .s3-heading {
-    margin: 0;
-    padding-top: 20px;
-    font-family: "Instrument Sans", sans-serif;
-    font-size: clamp(30px, 1.45rem + 0.89vw, 36px);
-    font-weight: 600;
-    line-height: 1;
-    color: #ffffff;
-  }
-
   .s3-cards {
     width: 100%;
     position: relative;
-    padding-left: max(32px, 5vw);
-    padding-right: max(32px, 5vw);
+    padding: 0;
     overflow: hidden;
   }
 
@@ -306,27 +293,6 @@
     transition: opacity 0.3s ease;
   }
 
-  .s3-card-box,
-  .s3-card-intro,
-  .s3-subcards {
-    transition: opacity 0.3s ease;
-    will-change: opacity;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-  }
-
-  @media (min-width: 769px) {
-    .s3-card:not(.is-active) .s3-card-box {
-      opacity: 0.5;
-    }
-    .s3-card:not(.is-active) .s3-subcards {
-      opacity: 1;
-    }
-    .s3-card:not(.is-active) .s3-card-intro {
-      opacity: 0.5;
-    }
-  }
-
   .s3-card-box {
     background-color: #0a0a0a;
     background-size: cover;
@@ -342,11 +308,6 @@
 
   .s3-card-box-low {
     background-position: center 32%;
-  }
-
-  .s3-card-intro {
-    display: flex;
-    flex-direction: column;
   }
 
   .s3-card-intro-text {
@@ -425,12 +386,6 @@
     padding: 0;
   }
 
-  .s3-arrow-btn.is-disabled {
-    opacity: 0.6;
-    cursor: default;
-    pointer-events: none;
-  }
-
   .s3-pill-indicator {
     display: flex;
     align-items: center;
@@ -461,14 +416,6 @@
 
   .s3-arrow-next .arrow-ico {
     transform: translate(-50%, -50%) scaleX(-1);
-  }
-
-  .s3-arrow-btn:hover .arrow-ico-default {
-    display: none;
-  }
-
-  .s3-arrow-btn:hover .arrow-ico-hover {
-    display: block;
   }
 
   @media (max-width: 768px) {

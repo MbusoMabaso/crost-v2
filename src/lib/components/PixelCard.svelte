@@ -181,7 +181,8 @@
 	onfocus={finalNoFocus ? undefined : onFocus}
 	onblur={finalNoFocus ? undefined : onBlur}
 	tabindex={finalNoFocus ? -1 : 0}
-	role="presentation"
+	role="group"
+	aria-label="Interactive Pixel Card"
 >
 	<canvas class="absolute inset-0 w-full h-full block" bind:this={canvasRef}></canvas>
 	<div class="relative z-10 w-full h-full">

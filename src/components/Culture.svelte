@@ -91,24 +91,16 @@
 </section>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Instrument+Sans:wght@400;500;600;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700;800&display=swap');
 
   section {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: #ffffff;
     width: 100%;
     overflow-x: hidden;
-    font-family: 'Instrument Sans', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     position: relative;
-  }
-
-  .gradient-divider {
-    width: 100%;
-    height: 6px;
-    background: linear-gradient(to right, #ff672e, #4f7ff2);
-    position: absolute;
-    top: 0;
-    left: 0;
+    color: #1a1a1a;
   }
 
   .container {
@@ -121,99 +113,99 @@
 
   .intro-section {
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
   }
 
   .intro-content {
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
   }
 
   .editorial-heading {
     color: #000;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
     font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 2rem;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin-bottom: 2.5rem;
     text-transform: uppercase;
   }
 
   .editorial-heading .italic {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 400;
     text-transform: none;
-    font-size: 1.1em;
+    font-size: 1.05em;
+    letter-spacing: -0.01em;
   }
 
   .intro-text {
-    color: #555;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    font-weight: 400;
+    color: #4a4a4a;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    font-weight: 450;
+    letter-spacing: -0.01em;
   }
 
   .culture-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 8rem;
+    gap: 2.5rem;
+    margin-bottom: 10rem;
   }
 
   .culture-card {
-    background: #fafafa;
-    padding: 3rem 2rem;
-    border: 1px solid #eee;
-    transition: all 0.3s ease;
+    background: #ffffff;
+    padding: 3.5rem 2.5rem;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   }
 
   .culture-card:hover {
-    border-color: #ddd;
-    background: #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border-color: #1256d8;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   }
 
   .culture-card h3 {
     color: #000;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-    line-height: 1.2;
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
     font-style: italic;
   }
 
   .culture-card p {
-    color: #666;
-    font-size: 1rem;
-    line-height: 1.7;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.75;
     margin: 0;
     font-weight: 400;
   }
 
   .values-section {
-    margin-top: 4rem;
-  }
-
-  .values-heading {
-    text-align: center;
-    margin-bottom: 4rem;
+    margin-top: 6rem;
+    padding-top: 6rem;
+    border-top: 1px solid #eee;
   }
 
   .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 4rem;
     margin-bottom: 4rem;
   }
 
   .value-card {
-    padding: 2rem 0;
-    border-bottom: 1px solid #eee;
-    transition: border-color 0.3s ease;
+    padding: 1rem 0 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
   }
 
   .value-card:hover {
@@ -223,29 +215,29 @@
   .value-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
   }
 
   .value-marker {
-    color: #000;
-    font-size: 0.6rem;
+    color: #1256d8;
+    font-size: 0.7rem;
   }
 
   .value-card h4 {
     color: #000;
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.35rem;
+    font-weight: 700;
     margin: 0;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
   .value-card p {
-    color: #666;
-    font-size: 1rem;
+    color: #555;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin: 0;
-    padding-left: 1.6rem;
+    padding-left: 1.95rem;
   }
 
   @media (max-width: 1024px) {
@@ -256,7 +248,7 @@
 
   @media (max-width: 768px) {
     section {
-      padding: 4rem 0;
+      padding: 5rem 0;
     }
 
     .container {
@@ -264,16 +256,25 @@
     }
 
     .editorial-heading {
-      font-size: 2.2rem;
+      font-size: 2.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .intro-section {
+      margin-bottom: 5rem;
     }
 
     .culture-grid {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .intro-text {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+    }
+
+    .value-card p {
+      padding-left: 0;
     }
   }
 </style>

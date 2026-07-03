@@ -4,6 +4,7 @@
   import Footer from './components/Footer.svelte'
   import Router from 'svelte-spa-router'
   import { fade } from 'svelte/transition'
+
   import Home from './pages/Home.svelte'
   import About from './pages/About.svelte'
   import Culture from './pages/Culture.svelte'
@@ -21,13 +22,9 @@
   let currentRoute = '/'
 
   function handleRouteLoaded(event) {
-    if (document.startViewTransition) {
-      document.startViewTransition(() => {
-        currentRoute = event.detail.location
-      })
-    } else {
-      currentRoute = event.detail.location
-    }
+    currentRoute = event.detail.location
+    // Force a scroll to top on every route change to prevent "stuck" scroll states
+    window.scrollTo(0, 0)
   }
 </script>
 
@@ -36,7 +33,7 @@
 <main class="page-container">
   {#key currentRoute}
     <div 
-      in:fade={{ duration: 400 }}
+      in:fade={{ duration: 300 }}
       class="route-wrapper"
     >
       <Router {routes} on:routeLoaded={handleRouteLoaded} />
@@ -50,16 +47,11 @@
   .page-container {
     min-height: 80vh;
     position: relative;
-    /* Removed overflow: hidden because it breaks position: sticky in child components */
+    /* We must ensure overflow is visible for sticky components to work */
+    overflow: visible;
   }
 
   .route-wrapper {
     width: 100%;
-  }
-
-  /* View Transition API Styles */
-  :global(::view-transition-old(root)),
-  :global(::view-transition-new(root)) {
-    animation-duration: 0.4s;
   }
 </style>

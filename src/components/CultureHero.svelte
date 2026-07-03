@@ -5,7 +5,9 @@
   import GridDistortion from './lib/GridDistortion.svelte'
 
   let visible = false
-  onMount(() => visible = true)
+  onMount(() => {
+    visible = true
+  })
 
   function scrollToSection(id) {
     const element = document.getElementById(id)
@@ -26,13 +28,15 @@
         relaxation={0.9} 
       />
     </div>
-    <div style="z-index: -1;">
+
+    <div class="light-rays-wrapper">
       <LightRays />
     </div>
+
     <div class="container">
       <div class="hero-content">
-        <h1 style="color: black;">Our Culture</h1>
-        <p style="color: black; font-weight: 500;">We ask what a brand needs to achieve before we consider how it should look. The work's visual quality is a consequence of the clarity of thinking, not a substitute for it.</p>
+        <h1>Our Culture</h1>
+        <p>We ask what a brand needs to achieve before we consider how it should look. The work's visual quality is a consequence of the clarity of thinking, not a substitute for it.</p>
         <div class="cta-buttons">
           <button class="btn btn-primary" on:click={() => scrollToSection('culture')}>Our Culture</button>
           <button class="btn btn-secondary" on:click={() => scrollToSection('mission')}>Our Mission & Vision</button>
@@ -61,10 +65,10 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    z-index: 10;
     box-sizing: border-box;
     padding-top: 8rem;
     padding-bottom: 2rem;
+    background-color: #ffffff; /* Fallback */
   }
 
   .aurora-bg {
@@ -73,7 +77,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
   }
   
@@ -85,7 +89,17 @@
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.4);
-    z-index: 1;
+    z-index: 2;
+  }
+
+  .light-rays-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   #culture-hero .container {
@@ -94,12 +108,12 @@
     gap: 3rem;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 10;
   }
 
   .hero-content h1 {
     font-size: 2.5rem;
-    color: var(--crost-dark);
+    color: #000;
     margin-bottom: 1rem;
     line-height: 1.2;
     font-weight: 800;
@@ -107,9 +121,10 @@
 
   .hero-content p {
     font-size: 1rem;
-    color: var(--crost-muted);
+    color: #444;
     margin-bottom: 2rem;
     line-height: 1.7;
+    font-weight: 500;
   }
 
   .cta-buttons {
@@ -142,12 +157,12 @@
 
   .btn-secondary {
     background-color: transparent;
-    border: 2px solid var(--crost-primary);
-    color: var(--crost-primary);
+    border: 2px solid #1256d8;
+    color: #1256d8;
   }
 
   .btn-secondary:hover {
-    background-color: var(--crost-primary);
+    background-color: #1256d8;
     color: white;
     transform: translateY(-3px);
   }

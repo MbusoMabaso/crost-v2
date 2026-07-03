@@ -3,7 +3,7 @@
   import { fade } from 'svelte/transition'
   import Iridescence from './Iridescence.svelte'
 
-  let visible = false
+  let visible = $state(false)
 
   const tabs = [
     'Overview',
@@ -12,11 +12,11 @@
     'Corporate Governance'
   ]
 
-  let activeTab = 'Overview'
-  let videoBlurVisible = false
-  let videoBlurRef
-  let revealStart = 0
-  let revealEnd = 0
+  let activeTab = $state('Overview')
+  let videoBlurVisible = $state(false)
+  let videoBlurRef = $state()
+  let revealStart = $state(0)
+  let revealEnd = $state(0)
 
   const advantagePills = [
     { label: 'Strongest Media Ecosystem', id: 'advantage-0' },
@@ -49,9 +49,9 @@
     }
   ]
 
-  let activeAdvantageIndex = 0
-  let progressPercentage = 0
-  let wrapperRef
+  let activeAdvantageIndex = $state(0)
+  let progressPercentage = $derived(((activeAdvantageIndex + 1) / advantagePills.length) * 100)
+  let wrapperRef = $state()
 
   const content = {
     'Overview': {
@@ -97,7 +97,6 @@
       const rect = wrapperRef.getBoundingClientRect()
       const windowHeight = window.innerHeight
 
-      // LOGIC: As soon as the section is at or above the top
       if (rect.top <= 0) {
         const totalHeight = rect.height - windowHeight
         const scrolled = Math.abs(rect.top)
@@ -124,8 +123,6 @@
     })
     return () => window.removeEventListener('scroll', handleScroll)
   })
-
-  $: progressPercentage = ((activeAdvantageIndex + 1) / advantagePills.length) * 100
 </script>
 
 <div class="about-hero-root">

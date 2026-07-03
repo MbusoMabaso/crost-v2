@@ -7,7 +7,7 @@
   let prevBtn;
   let nextBtn;
   let pillIndicator;
-  let cards;
+  let cards = [];
   let currentPosition = 0;
   let maxPosition = 0;
   let seps = [];
@@ -17,7 +17,6 @@
   const CAROUSEL_SPEED = 900;
   const CAROUSEL_DUR_MIN = 0.45;
   const CAROUSEL_DUR_MAX = 1.2;
-  const CAROUSEL_EASE = "power2.inOut";
 
   function getVisibleWidth() {
     if (!wrapper) return 0;
@@ -50,12 +49,12 @@
 
   function getCardWidth() {
     if (!cards || cards.length === 0) return 0;
-    return cards[0].offsetWidth;
+    return cards[0]?.offsetWidth || 0;
   }
 
   function getStep() {
     if (cards.length < 2) return getCardWidth() + getGap();
-    return cards[1].offsetLeft - cards[0].offsetLeft;
+    return (cards[1]?.offsetLeft || 0) - (cards[0]?.offsetLeft || 0);
   }
 
   const SEP_FADE = 32;
@@ -64,6 +63,7 @@
     const base = cards[0].offsetLeft;
     const gap = getGap();
     seps.forEach(sep => {
+      if (!sep) return;
       const rightRel = sep.offsetLeft - base + sep.offsetWidth - xPos;
       const o = (rightRel + gap) / SEP_FADE;
       sep.style.opacity = o < 0 ? 0 : o > 1 ? 1 : o;
@@ -82,15 +82,15 @@
   }
 
   function updatePillIndicator() {
-    if (!pillIndicator || !cards || !nav) return;
-    const pillDots = nav.querySelectorAll('.s2-pill-dot');
-    const activeIndex = currentPosition >= maxPosition ? cards.length - 1 : Math.min(currentPosition, cards.length - 1);
+    if (!pillIndicator || !cards) return;
+    const pillDots = pillIndicator.querySelectorAll('.s2-pill-dot');
+    const activeIndex = Math.min(currentPosition, cards.length - 1);
     
     pillDots.forEach((dot, index) => {
       dot.classList.toggle('active', index === activeIndex);
     });
     cards.forEach((card, index) => {
-      card.classList.toggle('is-active', index === activeIndex);
+      if (card) card.classList.toggle('is-active', index === activeIndex);
     });
   }
 
@@ -103,24 +103,18 @@
   function updatePosition() {
     if (!isCarouselActive()) {
       currentPosition = 0;
-      if (window.gsap) window.gsap.set(container, { x: 0 });
-      else if (container) container.style.transform = "";
+      if (container) container.style.transform = "";
       return;
     }
 
     const maxScroll = getMaxScroll();
-    const xPos = currentPosition >= maxPosition ? maxScroll : Math.min(currentPosition * getStep(), maxScroll);
+    const xPos = Math.min(currentPosition * getStep(), maxScroll);
 
     if (window.gsap) {
-      const currentX = window.gsap.getProperty(container, "x") || 0;
-      const distance = Math.abs(-xPos - currentX);
-      const duration = Math.min(CAROUSEL_DUR_MAX, Math.max(CAROUSEL_DUR_MIN, distance / CAROUSEL_SPEED));
-      
       window.gsap.to(container, {
         x: -xPos,
-        duration: duration,
-        ease: CAROUSEL_EASE,
-        force3D: true,
+        duration: 0.6,
+        ease: "power2.inOut",
         onUpdate: () => {
           updateSepVisibility(-(window.gsap.getProperty(container, "x") || 0));
         },
@@ -164,7 +158,7 @@
 </script>
 
 <section class="section-2">
-  <div class="s2-inner container">
+  <div class="container s2-inner">
     <span class="s2-eyebrow">
       <div class="s2-eyebrow-dot"></div>
       <span>Our Culture Pillars</span>
@@ -256,13 +250,21 @@
         rgba(18, 18, 18, 0) 49.73%
       ),
       linear-gradient(180deg, #000 4.65%, rgba(0, 0, 0, 0) clamp(340px, 43.54rem - 24.76vw, 600px)),
-      url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80") lightgray
+      url("/wp-content/uploads/2026/05/1486d37ab0ab15daf57de2ff1f9bd25dc90c048b.jpg") lightgray
         50% / cover no-repeat;
     color: #ffffff;
     padding: 100px 0;
     width: 100%;
     position: relative;
     overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .s2-inner {
@@ -323,8 +325,7 @@
   .s2-carousel {
     width: 100%;
     position: relative;
-    padding-left: max(32px, 5vw);
-    padding-right: max(32px, 5vw);
+    padding: 0;
     overflow: hidden;
   }
 

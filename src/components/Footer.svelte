@@ -97,20 +97,6 @@
     letter-spacing: 1px;
   }
 
-  .footer-section p {
-    color: var(--crost-muted);
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  .footer-section ul {
-    list-style: none;
-  }
-
-  .footer-section ul li {
-    margin-bottom: 0.25rem;
-  }
-
   .footer-section a {
     color: var(--crost-muted);
     transition: all 0.3s;
@@ -157,10 +143,6 @@
       margin-bottom: 0.5rem;
     }
 
-    .footer-section p {
-      font-size: 0.8rem;
-    }
-
     .footer-section a {
       font-size: 0.8rem;
     }
@@ -189,11 +171,6 @@
     .footer-section h4 {
       font-size: 0.85rem;
       margin-bottom: 0.4rem;
-    }
-
-    .footer-section p {
-      font-size: 0.75rem;
-      line-height: 1.4;
     }
 
     .footer-section ul li {

@@ -10,7 +10,7 @@
 </script>
 
 <section class="section-4">
-  <div class="s4-inner container">
+  <div class="container s4-inner">
     <span class="s4-eyebrow">
       <div class="s4-eyebrow-dot"></div>
       <span>Crost Centers of Excellence</span>
@@ -66,10 +66,18 @@
 <style>
   .section-4 {
     background-color: #ffffff;
-    padding: clamp(60px, -0.54rem + 8.93vw, 120px) 0;
+    padding: clamp(60px, 4rem, 120px) 0;
     width: 100%;
     position: relative;
     overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .s4-inner {
@@ -168,6 +176,9 @@
   }
 
   @media (max-width: 768px) {
+    .container {
+      padding: 0 1.5rem;
+    }
     .s4-row {
       flex-direction: column;
       gap: 20px;
